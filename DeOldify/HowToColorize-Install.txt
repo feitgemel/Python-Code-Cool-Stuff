@@ -1,0 +1,22 @@
+
+# create a conda environment
+
+git clone https://github.com/jantic/DeOldify.git 
+cd DeOldify
+conda env create -f environment.yml
+
+# activtae the enviromant 
+conda activate deoldify 
+
+pip install opencv-python
+
+md models
+
+wget https://data.deepai.org/deoldify/ColorizeArtistic_gen.pth -O ./models/ColorizeArtistic_gen.pth
+wget https://data.deepai.org/deoldify/ColorizeVideo_gen.pth -O ./models/ColorizeVideo_gen.pth
+wget https://media.githubusercontent.com/media/jantic/DeOldify/master/resource_images/watermark.png -O ./resource_images/watermark.png
+
+
+
+# define your python working directorty as DeOldify !!! in your IDE (for example vscode ....)
+
