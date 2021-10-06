@@ -1,0 +1,47 @@
+https://github.com/kwea123/VTuber_Unity
+
+git clone https://github.com/kwea123/VTuber_Unity.git
+cd VTuber_Unity
+
+build the Python enviroment
+===========================
+
+conda create -n vtuber python=3.6
+conda activate vtuber 
+ 
+Install Pytorch 
+https://pytorch.org/
+====================
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge
+
+pip install -r requirements_cpu.txt
+
+Install DLIB
+============
+https://github.com/kwea123/VTuber_Unity/wiki/Dlib-installation-on-Windows
+
+Install camke from here : https://cmake.org/download/
+
+* First make sure Visual Studio (>2015) is installed and updated to the latest version.
+* Try pip install dlib. If it fails, do the next step.
+* Go to some directory and do git clone https://github.com/davisking/dlib.git.
+* cd dlib and mkdir build and cd build.
+* cmake .. -G "Visual Studio 16 2019" -T host=x64. Replace the year with your Visual Studio year.
+* After the build complete (assuming no errors), mkdir lib.win-amd64-3.6 inside the build folder.
+* cd .. then python setup.py install.
+* Dlib should be successfully installed.
+
+
+download the model.zip from this link:  https://github.com/kwea123/VTuber_Unity/releases/tag/v1.0
+You need to download the models here, extract and put into face_alignment/ckpts.
+
+
+Test the install using the camera
+=================================
+python demo.py --debug --cpu
+
+
+# connect to character 
+#download the character from this link :  https://github.com/kwea123/VTuber_Unity/releases/tag/v1.0
+python demo.py --connect --debug --cpu
