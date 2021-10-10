@@ -1,10 +1,11 @@
+# Git hub link
 https://github.com/kwea123/VTuber_Unity
 
-git clone https://github.com/kwea123/VTuber_Unity.git
-cd VTuber_Unity
 
+
+==============================
 build the Python enviroment
-===========================
+=============================
 
 conda create -n vtuber python=3.6
 conda activate vtuber 
@@ -13,7 +14,15 @@ Install Pytorch
 https://pytorch.org/
 ====================
 
+# how to find my Cuda version
+nvcc --version
+
 conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge
+
+
+# download the github repository
+git clone https://github.com/kwea123/VTuber_Unity.git
+cd VTuber_Unity
 
 pip install -r requirements_cpu.txt
 
@@ -32,6 +41,10 @@ Install camke from here : https://cmake.org/download/
 * cd .. then python setup.py install.
 * Dlib should be successfully installed.
 
+--------------------------------------------------------------------------
+
+git clone https://github.com/kwea123/VTuber_Unity.git
+cd VTuber_Unity
 
 download the model.zip from this link:  https://github.com/kwea123/VTuber_Unity/releases/tag/v1.0
 You need to download the models here, extract and put into face_alignment/ckpts.
