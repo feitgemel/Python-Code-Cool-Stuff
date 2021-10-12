@@ -1,0 +1,32 @@
+# Git hub link
+https://github.com/pkhungurn/talking-head-anime-demo
+
+ 
+# download the github repository
+git clone https://github.com/pkhungurn/talking-head-anime-demo.git
+cd talking-head-anime-demo
+
+conda env create -f environment.yml
+conda activate talking-head-anime
+
+Install Pytorch 
+https://pytorch.org/
+====================
+
+# how to find my Cuda version
+nvcc --version
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge
+
+# download the models
+https://drive.google.com/open?id=1ajHViqyLDKFKfBtGPE5cbSGcMNa8rz8k , and copy to data folder.
+download the 68 dat file from : https://github.com/davisking/dlib-models ,and copy to data folder.
+
+# run from the root of the library
+python app/manual_poser.py
+
+python app/puppeteer.py
+
+
+#build your own anime :
+https://www.artbreeder.com/
