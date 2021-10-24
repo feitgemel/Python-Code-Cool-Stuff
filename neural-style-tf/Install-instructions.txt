@@ -1,0 +1,25 @@
+# download the github repository
+git clone https://github.com/cysmith/neural-style-tf.git
+cd neural-style-tf.git
+  
+
+#your Nvidia drivers and Cuda should be already installed
+
+
+conda create -n neural-style python=3.7
+conda activate neural-style
+
+pip install tensorflow-gpu==1.15 
+pip install openCV-python 
+pip install scipy
+
+Download "imagenet-vgg-verydeep-19" , VGG-19 model weights from http://www.vlfeat.org/matconvnet/pretrained/ ,
+and put it on the repo project direcory : 
+
+convert image :
+python neural_style.py  --content_img lion.jpg --content_img_dir C:/Python-Cool-Stuff/neural-style-tf/image_input --style_imgs starry-night.jpg --style_imgs_dir C:/Python-Cool-Stuff/neural-style-tf/styles --device /cpu:0 --verbose
+
+
+
+
+
