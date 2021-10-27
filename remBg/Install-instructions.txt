@@ -1,0 +1,27 @@
+# download the github repository
+git clone https://github.com/danielgatis/rembg.git
+cd rembg
+  
+
+conda create -n BGremove python=3.8
+conda activate BGremove 
+
+Install Pytorch 
+https://pytorch.org/
+====================
+
+# how to find my Cuda version
+nvcc --version
+
+# this is for Cuda 11. Please look for the relevant command for your Cuda version
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+pip install rembg
+
+Remove the background from a local file
+=======================================
+rembg -o path/to/output.png path/to/input.png
+
+
+Remove the background from all images in a folder
+rembg -p path/to/input path/to/output
