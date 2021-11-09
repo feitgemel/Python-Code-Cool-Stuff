@@ -1,0 +1,62 @@
+https://github.com/AliaksandrSiarohin/motion-cosegmentation
+
+conda create -n motionCosegmentation python=3.7
+conda activate motionCosegmentation 
+
+# download the github repository
+git clone https://github.com/AliaksandrSiarohin/motion-cosegmentation.git
+cd motion-cosegmentation
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+#install requirements
+copy the requirements.txt file to the library and overite it
+pip install -r requirements.txt
+  
+conda install ffmpeg -c conda-forge
+
+mkdir checkpoints results
+
+mkdir checkpoints
+cd checkpoints
+
+download this link : https://drive.google.com/drive/folders/1SsBifjoM_qO0iFzb8wLlsz_4qW2j8dZe
+and copy it to the "checkpoints" folder
+
+download vox-adv-cpk.pth.tar from this link : https://disk.yandex.ru/d/lEw8uRm140L_eQ
+and copy it to checkpoint library 
+
+create a images folder and copy images of faces into it
+create videos library and copy videos
+
+# run this command
+git clone https://github.com/AliaksandrSiarohin/face-makeup.PyTorch face_parsing
+
+
+# run for one video and one image for face
+python part_swap.py  --config config/vox-256-sem-10segments.yaml --target_video videos/07.mp4 --source_image images/16.png --checkpoint checkpoints/vox-adv-cpk.pth.tar --swap_index 1 --supervised --first_order_motion_model --result_video results/output.mp4
+
+# run for change the hair
+python part_swap.py  --config config/vox-256-sem-10segments.yaml --target_video videos/07.mp4 --source_image images/16.png --checkpoint checkpoints/vox-adv-cpk.pth.tar --swap_index 17,18 --supervised --first_order_motion_model --result_video results/output2.mp4
+
+# last run
+python part_swap.py  --config config/vox-256-sem-10segments.yaml --target_video videos/all256.mov --source_image images/old.jpg --checkpoint checkpoints/vox-adv-cpk.pth.tar --swap_index 1,2,3,4,5,6,7,8,9,14,17,18 --supervised --first_order_motion_model --result_video results/output.mp4
+
+
+
+# swapp index :
+===============
+
+0 - background
+1 - facial skin / beard
+2,3 eye brow
+4,5 - eyes
+6,7 - ears
+10 - nose
+11- teeth
+12 - top lip
+13 - bottom lip
+14 - neck
+17 - hair
+18 - more hair
+
