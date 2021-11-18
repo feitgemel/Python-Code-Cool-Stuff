@@ -1,0 +1,43 @@
+https://github.com/Rudrabha/Wav2Lip
+===================================
+
+git clone https://github.com/Rudrabha/Wav2Lip.git
+cd Wav2Lip
+
+conda create -n python-wav2lip python=3.6
+conda activate python-wav2lip 
+
+download this file :
+and copy the file wav2lip_gan.pth to checkpoints folder
+https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/EdjI7bZlgApMqsVoEUUXpLsBxqXbn5z8VTmoxp55YNDcIA?e=n9ljGW
+
+same with this link:
+https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/Eb3LEzbfuKlJiR600lQWRxgBIY27JZg80f7V9jtMfbNDaQ?e=TBFBVW
+Copy the file wav2lip.pth to checkpoints folder
+
+pip install librosa==0.7.0
+pip install numpy==1.17.1
+pip install opencv-contrib-python>=4.2.0.34
+pip install opencv-python==4.1.0.25
+conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly -c pytorch
+pip install tqdm==4.45.0
+pip install numba==0.48
+
+Download this file : https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth
+and copy it to the Wav2lip folder
+
+Download ffmpeg.exe from here : https://www.gyan.dev/ffmpeg/builds/
+copy it to the Wav2lip folder
+
+Copy video and audio files to a new Media folder . keep it short , about 20 seconds
+Important - The video should faces in all of its frames
+
+Running the lip-syncing video using the pre-trained models (Inference) :
+######################################################################
+
+python inference.py --checkpoint_path checkpoints/wav2lip_gan.pth --face media/indi1.mp4 --audio media/yochpaz.wav --outfile results/indi1.mp4
+
+
+
+
+

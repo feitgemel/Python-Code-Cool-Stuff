@@ -1,0 +1,34 @@
+https://github.com/aigagror/style-transfer-quality
+
+git clone https://github.com/aigagror/style-transfer-quality.git
+cd style-transfer-quality
+
+conda create -n styleTransfer python=3.7
+conda activate styleTransfer
+
+conda install numpy matplotlib pillow tqdm
+pip install pandas
+#pip install tensorflow
+pip install tensorflow==2.6.2  it should be under 2.7
+pip install tensorflow_addons
+pip install sklearn
+pip install pydot
+
+install Graphviz from here : https://graphviz.gitlab.io/download/
+and allow to add it to the path
+
+
+Style transfer:
+==============
+
+basic:
+python run.py --style_image=imgs/wave.jpg --content_image=imgs/brad_pitt.jpg --imsize=512 
+
+good :
+python run.py --style_image=imgs/sunflowers.jpg --content_image=imgs/girlBW.jpg --imsize=512 --disc_model=fast
+
+
+check :
+--feat_model: <vgg19|nasnetlarge|fast>: feature model architecture
+
+
