@@ -1,0 +1,77 @@
+https://github.com/TencentARC/GFPGAN
+====================================
+
+git clone https://github.com/TencentARC/GFPGAN.git
+cd GFPGAN
+
+conda create -n gfpgan python=3.9
+conda activate gfpgan
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+
+
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+pip install opencv-python
+pip install scipy
+pip install tqdm
+pip install yapf
+pip install lmdb
+pip install pyyaml
+
+pip install basicsr
+pip install facexlib
+pip install realesrgan 
+
+python setup.py develop
+
+Download pre-trained models
+wget https://github.com/TencentARC/GFPGAN/releases/download/v0.2.0/GFPGANCleanv1-NoCE-C2.pth -P experiments/pretrained_models
+
+# copy your images to a new folder named 'media'
+# run the model on my images stored images :
+
+python inference_gfpgan.py --upscale 2 --test_path media --save_root results 
+
+
+
+run the model on videos :
+========================
+
+cd PyVideoFramesExtractor
+mkdir media
+copy the video file to media directory
+
+python extract.py --video media/TimeTunnel-1-min.mp4 --output-root media
+python extract.py --video media/StarTrekForGan.mp4 --output-root media
+
+copy the directory to the cd GFPGAN media directory
+go back to the home GFGGAN folder
+
+#python inference_gfpgan.py --upscale 2 --test_path media/TimeTunnel-1-min_frames --save_root results 
+
+run the face improve model for the frame faces :
+================================================
+python inference_gfpgan.py --upscale 2 --test_path media/StarTrekForGan_frames --save_root results 
+
+
+create video from frames :
+==========================
+git clone https://github.com/chi0tzp/PyVideoCreator.git
+cd PyVideoCreator
+
+copy the frames folder into a new nedia folder under this library:
+mkdir media
+cd media 
+copy the frames folder to the media folder
+
+python create_video.py -v --img_dir media/restored_imgs --fps 30 --fourcc MJPG  --video timeTunnelSuperRes.mp4
+
+ 
+
+

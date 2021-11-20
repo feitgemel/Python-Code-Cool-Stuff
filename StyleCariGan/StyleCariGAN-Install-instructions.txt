@@ -1,0 +1,47 @@
+https://github.com/wonjongg/StyleCariGAN
+===================================
+
+git clone https://github.com/wonjongg/StyleCariGAN.git
+cd StyleCariGAN
+
+conda create -n StyleCariGAN python=3.6
+conda activate StyleCariGAN
+
+
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+
+
+I am installing torch 1.10 and Cuda 11.3
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+pip install cmake
+conda install -c conda-forge dlib
+
+pip install requests==2.23.0 
+pip install tqdm==4.46.1
+pip install ninja
+
+
+mkdir checkpoint
+mkdir results
+
+this will download the checkpoint and we sould save it to checkpoints folder
+
+wget -N https://www.dropbox.com/s/ryc7v1ghsm54mr8/001000.pt?dl=0 -O checkpoint/001000.pt
+
+
+
+Choose image : image 256X256
+
+run the model :
+===============
+python test.py --ckpt CHECKPOINT_PATH --input_dir INPUT_IMAGE_PATH --output_dir OUTPUT_CARICATURE_PATH --invert_images
+
+python test.py --ckpt checkpoint/001000.pt --input_dir media --output_dir results
+
+
