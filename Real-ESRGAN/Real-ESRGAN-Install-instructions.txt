@@ -1,0 +1,83 @@
+https://github.com/xinntao/Real-ESRGAN
+======================================
+
+git clone https://github.com/xinntao/Real-ESRGAN.git
+cd Real-ESRGAN
+
+conda create -n Real-ESRGAN python=3.9
+conda activate Real-ESRGAN
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+
+pip install basicsr
+pip install facexlib
+pip install gfpgan
+pip install numpy
+pip install opencv-python
+pip install pillow
+pip install tqdm
+
+python setup.py develop
+
+Download pre-trained models: RealESRGAN_x4plus.pth
+This will save it the folder : experiments/pretrained_models
+wget https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth -P experiments/pretrained_models
+
+copy your images to a new media folder :
+python inference_realesrgan.py --model_path experiments/pretrained_models/RealESRGAN_x4plus.pth --input media --face_enhance --tile 100 --output results
+
+
+# run on a video file
+
+Step 1:
+Extract the video file to frames
+# this is the Github repo: https://github.com/chi0tzp/PyVideoFramesExtractor
+
+python extract.py --video media/TimeTunnel-1-min.mp4 --output-root media
+
+step 2:
+python inference_realesrgan.py --model_path experiments/pretrained_models/RealESRGAN_x4plus.pth --input TimeTunnel --face_enhance --tile 100 --output TimeTunnelOut
+
+
+step 3:
+# Merge all the frames to a one video 
+# this is the Github repo: https://github.com/chi0tzp/PyVideoCreator
+
+python create_video.py -v --img_dir media/TimeTunnelOut --fps 24 --fourcc XVID --video TimeTunnelFinal.mp4
+
+
+
+
+
+
+
+
+
+
+
+
+===================================================================================================================================================
+Usage: python inference_realesrgan.py --model_path experiments/pretrained_models/RealESRGAN_x4plus.pth --input infile --output outfile [options]...
+
+  -h                   show this help
+  --input              Input image or folder. Default: inputs
+  --output             Output folder. Default: results
+  --model_path         Path to the pre-trained model. Default: experiments/pretrained_models/RealESRGAN_x4plus.pth
+  --netscale           Upsample scale factor of the network. Default: 4
+  --outscale           The final upsampling scale of the image. Default: 4
+  --suffix             Suffix of the restored image. Default: out
+  --tile               Tile size, 0 for no tile during testing. Default: 0
+  --face_enhance       Whether to use GFPGAN to enhance face. Default: False
+  --half               Whether to use half precision during inference. Default: False
+  --ext                Image extension. Options: auto | jpg | png, auto means using the same extension as inputs. Default: auto
+
+
+
