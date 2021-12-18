@@ -1,0 +1,50 @@
+https://github.com/PeterL1n/RobustVideoMatting
+==============================================
+
+git clone https://github.com/PeterL1n/RobustVideoMatting.git
+cd RobustVideoMatting
+
+
+download the weights:
+====================
+
+mkdir checkpoints
+cd checkpoints 
+wget https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3.pth
+
+cd ..
+
+conda create -n RVM python=3.9
+conda activate RVM
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+
+pip install av==8.0.3 
+pip install tqdm==4.61.1
+pip install pims==0.5
+
+python inference.py --variant mobilenetv3 --checkpoint checkpoints/rvm_mobilenetv3.pth --device cuda --input-source all256.mov --output-type video --output-composition all256Result.mp4 --output-video-mbps 8 --seq-chunk 12
+
+
+
+python inference.py \
+    --variant mobilenetv3 \
+    --checkpoint "CHECKPOINT" \
+    --device cuda \
+    --input-source "input.mp4" \
+    --output-type video \
+    --output-composition "composition.mp4" \
+    --output-alpha "alpha.mp4" \
+    --output-foreground "foreground.mp4" \
+    --output-video-mbps 4 \
+    --seq-chunk 1
+
+

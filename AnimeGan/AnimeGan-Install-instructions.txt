@@ -1,0 +1,32 @@
+https://github.com/bryandlee/animegan2-pytorch
+==============================================
+
+git clone https://github.com/bryandlee/animegan2-pytorch.git
+cd animegan2-pytorch
+
+conda create -n animegan2 python=3.9
+conda activate animegan2
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+pip install opencv-python
+
+for GPU :
+python test.py --input_dir images--device cuda:0 --output_dir results
+
+for CPU :
+python test.py --input_dir images--device cpu:0 --output_dir results
+
+python test.py --input_dir images--device cpu:0 --output_dir results --checkpoint weights/paprika.pt
+python test.py --input_dir images--device cpu:0 --output_dir results --checkpoint weights/celeba_distill.pt
+python test.py --input_dir images--device cpu:0 --output_dir results --checkpoint weights/face_paint_512_v1.pt
+
+
+

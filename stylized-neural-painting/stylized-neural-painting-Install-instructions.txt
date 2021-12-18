@@ -1,0 +1,71 @@
+https://github.com/jiupinjia/stylized-neural-painting
+=====================================================
+
+git clone https://github.com/jiupinjia/stylized-neural-painting.git
+cd stylized-neural-painting
+
+
+download the pretrained models:
+==============================
+
+https://drive.google.com/file/d/1sqWhgBKqaBJggl2A8sD1bLSq2_B1ScMG/view?usp=sharing
+https://drive.google.com/file/d/19Yrj15v9kHvWzkK9o_GSZtvQaJPmcRYQ/view?usp=sharing
+https://drive.google.com/file/d/1XsjncjlSdQh2dbZ3X1qf1M8pDc8GLbNy/view?usp=sharing
+https://drive.google.com/file/d/162ykmRX8TBGVRnJIof8NeqN7cuwwuzIF/view?usp=sharing
+
+
+conda create -n SNPaint python=3.6
+conda activate SNPaint
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+pip install matplotlib
+pip install scikit-image
+pip install scikit-learn
+pip install scipy
+pip install numpy
+pip install opencv-python
+pip install opencv-contrib-python
+pip install runway-python
+pip install gdown
+pip install pillow
+
+
+==================
+# run the model
+==================
+
+# copy your image to the test_image folder
+==========================================
+
+# Notice : the number of strokes should be according to your memory video card
+
+
+From photo to oil painting:
+==========================
+
+# 1000 strkoes :
+python demo_prog.py --img_path test_images/dori.jpg --canvas_color 'white' --max_m_strokes 1000 --max_divide 5 --renderer oilpaintbrush --renderer_checkpoint_dir checkpoints_G_oilpaintbrush --net_G zou-fusion-net
+
+
+From photo to marker-pen paintintg :
+==================================
+# 1000 strkoes :
+
+python demo_prog.py --img_path test_images/dori.jpg --canvas_color 'black' --max_m_strokes 1000 --max_divide 5 --renderer markerpen --renderer_checkpoint_dir checkpoints_G_markerpen --net_G zou-fusion-net
+
+
+
+Style transfer :
+=================
+
+# 500 strkoes :
+
+python demo.py --img_path test_images/dori.jpg --canvas_color 'white' --max_m_strokes 500 --m_grid 5 --renderer oilpaintbrush --renderer_checkpoint_dir checkpoints_G_oilpaintbrush --net_G zou-fusion-net --output_dir ./output
