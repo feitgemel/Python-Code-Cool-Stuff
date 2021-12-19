@@ -1,0 +1,45 @@
+https://github.com/yuval-alaluf/SAM
+=====================================================
+
+git clone https://github.com/yuval-alaluf/SAM.git
+cd SAM
+
+conda create -n Age-Transform python=3.6.7
+conda activate Age-Transform
+
+# You need a GPU video card with Cuda support
+# You need to Install Pytorch version : 1.6 or 1.7
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+# install Pytorch 1.7 :
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+
+# install Python libraries: 
+
+pip install scipy==1.4.1
+pip install matplotlib==3.2.1
+pip install tqdm==4.46.0
+pip install numpy==1.18.4
+pip install opencv-python==4.2.0.34
+pip install pillow==7.1.2
+pip install tensorboard==2.2.1
+
+
+mkdir pretrained_models
+pip install gdown
+gdown "https://drive.google.com/u/0/uc?id=1XyumF6_fdAxFmxpFcmPf-q84LU_22EMC&export=download" -O pretrained_models/sam_ffhq_aging.pt
+wget "https://github.com/italojs/facial-landmarks-recognition/raw/master/shape_predictor_68_face_landmarks.dat"
+
+# copy face images to a folder named "images"
+
+# run the model
+python scripts/inference.py --exp_dir=exp --checkpoint_path=pretrained_models/sam_ffhq_aging.pt --data_path=images --test_batch_size=4 --test_workers=4 --couple_outputs --target_age=0,10,20,30,40,50,60,70,80
+
+# The results will be in folder named "exp"
+
+
+
+
