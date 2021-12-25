@@ -1,0 +1,41 @@
+https://github.com/jiupinjia/SkyAR
+==============================================
+
+git clone https://github.com/jiupinjia/SkyAR.git
+cd SkyAR
+
+conda create -n SkyAR python=3.6
+conda activate SkyAR
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+I am installing torch 1.10 and Cuda 11 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+pip install matplotlib
+pip install scikit-image
+pip install scikit-learn
+pip install scipy
+pip install numpy
+pip install opencv-python
+pip install opencv-contrib-python
+
+
+Copy the pretrained model from here : https://drive.google.com/file/d/1COMROzwR4R_7mym6DL9LXhHQlJmJaV0J/view?usp=sharing
+extract the folder inside the zip to the repo folder
+
+#Run a demo :
+python skymagic.py --path config/test.json
+
+
+ "skybox_center_crop": 0.5, # the zoom of the skybox
+  "auto_light_matching": false,  # match the same light 
+  "relighting_factor": 0.6,
+  "recoloring_factor": 0.5,
+  "halo_effect": true, # the edges 
+
+
