@@ -1,0 +1,41 @@
+https://github.com/lucidrains/big-sleep
+==============================================
+
+git clone https://github.com/lucidrains/big-sleep.git
+cd big-sleep
+
+conda create -n BgSleep python=3.7
+conda activate BgSleep
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+# install the library
+pip install big-sleep
+
+
+
+#faster 
+dream "a blue house with red windows" --image_size=128 --epochs=1 --iterations=500 
+
+
+# create frames + faster 
+dream "a castle in the sky" --image_size=128 --save_every=10 --save_progress --random --epochs=1 
+
+# create frames for a video + 5 epochs
+# ====================================
+dream "a castle in the sky" --image_size=128 --save_every=10 --save_progress --random --epochs=5
+dream "a blue house with red windows" --image_size=128 --epochs=5 --iterations=600 
+
+#Full - 5 hours !!!!!!!!!!!!
+# ==========================
+ 
+dream "a blue house with red windows" --image_size=128
+
+

@@ -1,0 +1,26 @@
+https://github.com/pradeeplam/Anime-Sketch-Coloring-with-Swish-Gated-Residual-UNet
+==============================================
+
+git clone https://github.com/pradeeplam/Anime-Sketch-Coloring-with-Swish-Gated-Residual-UNet.git
+cd Anime-Sketch-Coloring-with-Swish-Gated-Residual-UNe
+
+conda create -n ASC python=3.7
+conda activate ASC 
+
+
+pip install -r requirements.txt
+
+Create data folder with this sturcture
+data/
+├── images/
+│   ├── images_bw/
+│   └── images_rgb/
+└── vgg_19.ckpt
+
+download the vgg_19.ckpt from this link : http://download.tensorflow.org/models/vgg_19_2016_08_28.tar.gz
+and copy it to the data folder
+
+download checkpoint folder and copy it tor main repo 
+https://github.com/pradeeplam/Anime-Sketch-Coloring-with-Swish-Gated-Residual-UNet/releases/download/1.0/checkpoint.zip
+
+python evaluate.py sketch_image.jpg Checkpoint/model.ckpt --output-dir result 
