@@ -1,0 +1,35 @@
+https://github.com/AliaksandrSiarohin/first-order-model
+=======================================================
+
+git clone https://github.com/AliaksandrSiarohin/first-order-model.git
+cd first-order-model
+
+conda create -n first-order-model python=3.6
+conda activate first-order-model
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+
+pip install imageio==2.3.0
+pip install matplotlib==2.2.2
+pip install numpy==1.15.0    		> 1.16.0
+pip install pandas==0.23.4
+pip install python-dateutil==2.7.3
+pip install pytz==2018.5
+pip install PyYAML==5.1
+pip install scikit-image==0.14.0
+pip install scikit-learn==0.19.2
+pip install scipy==1.1.0
+pip install tqdm==4.24.0
+
+
+
+
+
