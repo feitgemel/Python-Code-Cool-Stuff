@@ -1,0 +1,50 @@
+https://github.com/nerdyrodent/glide-text2im
+============================================
+
+git clone https://github.com/nerdyrodent/glide-text2im.git
+cd glide-text2im
+
+conda create -n glide python=3.9
+conda activate glide
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+===============================================================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+
+pip install -e .
+
+
+# Thanks to nerdy Rodnet who fork the repo and configure it for local usage
+= =========================================================================
+
+
+#open the file text2im.py and look for the prompt paramter. change the text to your custom text
+#For example: "A castle in the sky" / A puppy on the bed
+
+# first run        
+python text2im.py
+
+#Please notice : the result is always 256X256 but you can run use one of my videos to upscale the image
+
+#inpaint 
+#=======
+
+open inpaint.py
+source_image_256 -> change the image to your backgournd 256X256 image
+and the same for source_image_64
+
+#second run -> A blue car (with grass as background)
+#===================================================
+python inpaint.py
+
+
+# clip_guided  -> the same as the first one , plus filtered noise-aware
+# third run -> A dolphin in a pool
+# ======================================================================
+python clip_guided.py 

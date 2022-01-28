@@ -1,0 +1,80 @@
+https://github.com/NVlabs/stylegan3
+====================================
+
+
+git clone https://github.com/NVlabs/stylegan3.git
+cd stylegan3
+
+conda create -n stylegan3 python=3.8
+conda activate stylegan3
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+install conda 
+===============================================================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+# for pytorch 1.7.1 
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
+
+pip install numpy>=1.20
+pip install click>=8.0
+pip install pillow==8.3.1
+pip install scipy==1.7.1
+pip install requests==2.26.0
+pip install tqdm==4.62.2
+pip install ninja==1.10.2
+pip install matplotlib==3.4.2
+pip install imageio==2.9.0
+pip install imgui==1.3.0
+pip install glfw==2.2.0
+pip install pyopengl==3.1.5
+pip install imageio-ffmpeg==0.4.3
+pip install pyspng
+pip install psutil
+
+
+
+# Generate an image using pre-trained AFHQv2 model (Animal face high quality)
+python gen_images.py --outdir=out --trunc=1 --seeds=2 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl
+
+# generate a video - one image in the video 
+python gen_video.py --output=out.mp4 --trunc=1 --seeds=0-31 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl
+
+
+# generate a video with 2X4 grid
+python gen_video.py --output=out2.mp4 --trunc=1 --seeds=0-31 --grid=4x2 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl
+
+
+
+
+source for download face dataset:
+https://www.kaggle.com/maciejgronczynski/biggest-genderface-recognition-dataset
+
+
+#convert it to squere using Katna :
+https://katna.readthedocs.io/en/latest/tutorials_image.html#resize-all-images-in-a-directory
+
+pip install katna
+
+python example_image_resize_from_dir.py
+
+
+python dataset_tool.py --source=manImages --dest=datasets/ManImages.zip
+
+# it will take 5 days
+python train.py --outdir=training-runs --cfg=stylegan3-r --data=datasets/ManImages.zip --gpus=1 --batch=32  --gamma=2 --batch-gpu=16 --mirror=1 --kimg=5000 --snap=6 --metrics=none 
+
+
+
+
+stylegan3-t-ffhq-1024x1024.pkl,
+stylegan3-t-ffhqu-1024x1024.pkl,
+stylegan3-t-ffhqu-256x256.pkl
+stylegan3-r-ffhq-1024x1024.pkl, stylegan3-r-ffhqu-1024x1024.pkl, stylegan3-r-ffhqu-256x256.pkl
+stylegan3-t-metfaces-1024x1024.pkl, stylegan3-t-metfacesu-1024x1024.pkl
+stylegan3-r-metfaces-1024x1024.pkl, stylegan3-r-metfacesu-1024x1024.pkl
+stylegan3-t-afhqv2-512x512.pkl
+stylegan3-r-afhqv2-512x512.pkl

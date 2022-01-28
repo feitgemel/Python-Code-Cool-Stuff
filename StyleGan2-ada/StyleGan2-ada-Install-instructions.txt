@@ -1,0 +1,69 @@
+https://github.com/NVlabs/stylegan2-ada-pytorch
+===============================================
+
+ADA - may run on less images and better speed
+
+
+git clone https://github.com/NVlabs/stylegan2-ada-pytorch.git
+cd stylegan2-ada-pytorch
+
+conda create -n stylegan2-ada python=3.7
+conda activate stylegan2-ada
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+ 
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+===============================================================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+
+# for pytorch 1.7.1 
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
+
+
+pip install click
+pip install tqdm
+
+You need a dataset that square based images. for example 224 X 224
+
+
+# convert the data set to pytorch format
+python dataset_tool.py --source Butterfly --dest ButterFly-temp
+
+
+
+
+
+I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
+========================================
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+pip install ninja
+pip install click
+pip install imageio
+
+python generate.py --outdir=results --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl --seeds=6600-6625
+
+python projector.py --outdir=out --target=~/mytargetimg.png --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl
+
+python generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \
+    --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+
+
+
+
+pip install opencv-python
+
+for GPU :
+python test.py --input_dir images--device cuda:0 --output_dir results
+
+for CPU :
+python test.py --input_dir images--device cpu:0 --output_dir results
+
+python test.py --input_dir images--device cpu:0 --output_dir results --checkpoint weights/paprika.pt
+python test.py --input_dir images--device cpu:0 --output_dir results --checkpoint weights/celeba_distill.pt
+python test.py --input_dir images--device cpu:0 --output_dir results --checkpoint weights/face_paint_512_v1.pt
+
+
+
