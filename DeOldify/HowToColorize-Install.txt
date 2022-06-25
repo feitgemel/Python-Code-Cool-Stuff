@@ -1,4 +1,8 @@
 
+# Requirements : Nvidia GPU card & and Cuda tool kit install
+# I am using this card : https://amzn.to/3mTa7HX
+# Working Anaconda enviroment
+
 # create a conda environment
 
 git clone https://github.com/jantic/DeOldify.git 

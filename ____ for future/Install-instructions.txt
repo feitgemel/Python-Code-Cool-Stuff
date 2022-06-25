@@ -3,19 +3,37 @@
 # I am using this card : https://amzn.to/3mTa7HX
 # Working Anaconda enviroment
 
-https://github.com/lucidrains/big-sleep
+https://github.com/LynnHo/CycleGAN-Tensorflow-2
 ==============================================
 
-git clone https://github.com/lucidrains/big-sleep.git
-cd big-sleep
+git clone https://github.com/LynnHo/CycleGAN-Tensorflow-2.git
+cd CycleGAN-Tensorflow-2
 
-conda create -n BgSleep python=3.7
-conda activate BgSleep
+conda create -n CycleGANTest python=3.6
+conda activate CycleGANTest 
+
+pip install tensorflow-gpu
+conda install scikit-image tqdm 
+pip install OpenCV-python
+conda install -c conda-forge oyaml
+pip install tensorflow-addons==0.10.0
+
+mkdir datasets
+
+wget -O datasets/summer2winter_yosemite.zip https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/summer2winter_yosemite.zip 
+wget -O datasets/horse2zebra.zip https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/horse2zebra.zip 
 
 
-#check your Cuda version :
-# how to find my Cuda version
-nvcc --version
+Extract the zip files into dataset folder
+
+
+You cad download more datasets here : https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/
+Extract the file into dataset folder
+
+
+
+python test.py --experiment_dir ./output/summer2winter_yosemite
+
  
 I am installing torch 1.10 and Cuda 11.3 - You should install your Cuda version
 ========================================

@@ -1,0 +1,29 @@
+
+# Requirements : Nvidia GPU card & and Cuda tool kit install
+# I am using this card : https://amzn.to/3mTa7HX
+# Working Anaconda enviroment
+
+Steps :
+=======
+
+# create conda env:
+conda create -n clip python=3.8
+conda activate clip
+
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+pip install ftfy
+pip install regex
+pip install tqdm
+pip install numpy
+pip install opencv-python
+
+git clone https://github.com/openai/CLIP.git
+cd clip
+
+copy the images (image 1 , 2 , 3 ) to the clip directory
+The runClip.py as also in the folder. You can copy it , or follow the tutorial and understand the step
+
+
+

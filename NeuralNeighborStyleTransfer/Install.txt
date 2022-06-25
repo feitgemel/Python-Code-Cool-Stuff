@@ -1,0 +1,47 @@
+
+# Requirements : Nvidia GPU card & and Cuda tool kit install
+# I am using this card : https://amzn.to/3mTa7HX
+# Working Anaconda enviroment
+
+https://github.com/nkolkin13/NeuralNeighborStyleTransfer
+=======================================================
+
+git clone https://github.com/nkolkin13/NeuralNeighborStyleTransfer.git
+cd NeuralNeighborStyleTransfer
+
+conda create -n NNST python=3.9
+conda activate NNST
+
+
+#check your Cuda version :
+# how to find my Cuda version
+nvcc --version
+
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+pip install Imageio
+pip install numpy
+
+Generate 512X512 image requires 6 GB  --> this is the default
+Generate 1024X1024 image requires 12 GB
+
+# run :
+python styleTransfer.py --content_path inputs/content/C1.png --style_path inputs/style/S4.jpg --output_path output.jpg
+
+more paramters :
+
+--dont_colorize -> get the color from the style and not from the original
+--no_flip --> use less RAM 
+--high_res --> create 1024X1024 image
+--alpha ALPHA_VALUE  --> 
+
+# High Res 1024X1024
+python styleTransfer.py --content_path inputs/content/C1.png --style_path inputs/style/S4.jpg --output_path output.jpg --high_res
+
+
+sketch : step by step 
+
+python styleTransfer.py --content_path face.jpg --style_path rabbit.jpg --output_path output.jpg --dont_colorize
+python styleTransfer.py --content_path face.jpg --style_path lion.jpeg --output_path output.jpg --dont_colorize
+python styleTransfer.py --content_path face.jpg --style_path lion.jpeg --output_path output.jpg --dont_colorize --alpha 0.5
+

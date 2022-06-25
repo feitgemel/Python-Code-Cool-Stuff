@@ -1,0 +1,60 @@
+
+# Requirements : Nvidia GPU card & and Cuda tool kit install
+# I am using this card : https://amzn.to/3mTa7HX
+# Working Anaconda enviroment
+
+https://github.com/ZPdesu/Barbershop
+=======================================================
+
+git clone https://github.com/ZPdesu/Barbershop.git
+cd Barbershop
+
+conda create -n Brshop python=3.7
+conda activate Bshop 
+
+
+copy the run.bat to the Barbershop working directory
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+copy requirements.txt the working folder , and run the next command :
+pip install -r requirements.txt
+
+
+Last relevant Python libraries :
+conda install -c conda-forge dlib  
+pip install git+https://github.com/openai/CLIP.git
+
+
+
+
+Download the pre-paired images from : https://drive.google.com/drive/folders/15jsR9yy_pfDHiS9aE3HcYDgwtBbAneId?usp=sharing
+And copy it to "input/face"
+============================================================
+python main.py --input_dir input/face --im_path1 90.png --im_path2 15.png --im_path3 117.png --sign realistic --smooth 5
+
+Parameters explain :
+--im_path1  ---> original image
+--im_path2  ---> hair structure image
+--im_path3  ---> hair color
+
+
+================================================================================
+#Preprocess your own images. Please put the raw images in the unprocessed folder.
+And run this command. It will reshape the image and copy it to the input/face folder :
+======================================================================================
+copy Lilach_face.png to the Preprocess folder 
+
+python align_face.py
+
+
+#Run the model: 
+================================
+same hair style and same color : 
+python main.py --input_dir input/face --im_path1 Lilach_face.png --im_path2 57.png --im_path3 57.png --sign realistic --smooth 5
+
+different hair style and  different color  :
+python main.py --input_dir input/face --im_path1 Lilach_face.png --im_path2 57.png --im_path3 58.png --sign realistic --smooth 5
+
+
+
