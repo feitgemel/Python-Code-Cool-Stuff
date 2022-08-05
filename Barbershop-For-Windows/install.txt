@@ -13,8 +13,6 @@ conda create -n Brshop python=3.7
 conda activate Bshop 
 
 
-copy the run.bat to the Barbershop working directory
-
 conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 
 copy requirements.txt the working folder , and run the next command :

@@ -1,0 +1,96 @@
+
+# Requirements : Nvidia GPU card & and Cuda tool kit install
+# I am using this card : https://amzn.to/3mTa7HX
+# Working Anaconda enviroment
+
+https://github.com/stylegan-human/StyleGAN-Human#Model-Zoo
+==========================================================
+
+git clone https://github.com/stylegan-human/StyleGAN-Human.git
+cd StyleGAN-Human
+
+
+Tested with : Python 3.7.13 and PyTorch 1.9.1 with CUDA 11.1
+
+======================================================
+conda create -n stl-human-37 python=3.7
+conda activate stl-human37
+
+# Install Pytorch :
+
+# what is my Cuda version :
+nvcc --version
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
+
+pip install numpy
+pip install click
+pip install pillow
+pip install scipy==1.7.1
+
+pip install requests==2.26.0
+pip install tqdm==4.62.2
+pip install ninja==1.10.2
+pip install matplotlib==3.4.2
+pip install imageio==2.9.0
+
+pip install imgui==1.3.0
+pip install glfw==2.2.0
+pip install pyopengl==3.1.5
+pip install imageio-ffmpeg==0.4.3
+pip install lpips==0.1.4
+pip install pyspng
+pip install cmake
+conda install -c conda-forge dlib
+
+
+pip install opencv-python
+pip install pandas
+pip install moviepy
+pip install imutils
+
+
+
+Create a new folder :
+mkdir pretrained_models
+
+download the pretrained file : https://drive.google.com/file/d/1FlAb1rYa0r_--Zj_ML8e6shmaF28hQb5/view?usp=sharing
+and copy it under folder 'pretrained_models'
+
+
+# Generate full-body human images using our pretrained model
+
+# Generate human full-body images without truncation
+python generate.py --outdir=outputs/generate/stylegan_human_v2_1024 --trunc=1 --seeds=1,3,5,7 --network=pretrained_models/stylegan_human_v2_1024.pkl --version 2
+
+# Generate human full-body images with truncation 
+python generate.py --outdir=outputs/generate/stylegan_human_v2_1024 --trunc=0.8 --seeds=0-100 --network=pretrained_models/stylegan_human_v2_1024.pkl --version 2
+
+
+Interpolation :
+===============
+Move from image 85 to image 100 (like a animated gif) :
+python interpolation.py --network=pretrained_models/stylegan_human_v2_1024.pkl  --seeds=85,100 --outdir=outputs/inter_gifs
+
+
+Style-mixing image :
+====================
+
+the In the row therer is the base body and colors
+in the column we choose the style that will be copied down to the row : the hair, hand position etc
+
+python style_mixing.py --network=pretrained_models/stylegan_human_v2_1024.pkl --rows=86 --cols=55,100 --styles=0-4 --outdir=outputs/stylemixing
+python style_mixing.py --network=pretrained_models/stylegan_human_v2_1024.pkl --rows=86 --cols=55,100,55,100,55,100 --styles=0-4 --outdir=outputs/stylemixing
+python style_mixing.py --network=pretrained_models/stylegan_human_v2_1024.pkl --rows=85,100,75,458,1500 --cols=55,821,1789,293 --styles=0-3 --outdir=outputs/stylemixing
+
+
+Before the next step :
+Download the 512 model (it utilizses less memory) : https://drive.google.com/file/d/1dlFEHbu-WzQWJl7nBBZYcTyo000H9hVm/view?usp=sharing
+
+pip install tensrflow==1.13.1
+pip install protobuf==3.20.1
+
+Style-mixing video :
+================== =
+
+python stylemixing_video.py --network=pretrained_models/stylegan_human_v2_512.pkl --row-seed=3859 --col-seeds=3098,31759,3791 --col-styles=8-12 --trunc=0.8 --outdir=outputs/stylemixing_video 
