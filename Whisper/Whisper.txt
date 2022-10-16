@@ -1,0 +1,24 @@
+
+# Requirements : Nvidia GPU card & and Cuda tool kit install
+# I am using this card : https://amzn.to/3mTa7HX
+# Working Anaconda enviroment
+
+conda create -n whisper python=3.9
+conda activate whisper 
+
+nvcc --version
+conda install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
+
+Download ffmpeg from here : https://www.gyan.dev/ffmpeg/builds/
+Exract the files , and put the folder in the Windows path
+
+# install the librari
+pip install git+https://github.com/openai/whisper.git 
+
+
+whisper c:/temp/test.wav --language Hebrew --output_dir c:/temp
+
+
+
+
+
