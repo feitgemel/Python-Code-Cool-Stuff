@@ -10,7 +10,7 @@ git clone https://github.com/ZPdesu/Barbershop.git
 cd Barbershop
 
 conda create -n Brshop python=3.7
-conda activate Bshop 
+conda activate Brshop 
 
 
 conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
