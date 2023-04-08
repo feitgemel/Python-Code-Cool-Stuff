@@ -14,10 +14,7 @@ In this tutorial, we'll show you how to use this powerful Python library to tran
 <br/><br/> 
 With our step-by-step guide and pre-trained model, you'll learn how to create unique and personalized stylized images in no time. 
 <br/><br/> 
-More relevant content in this playlis [tutorial](https://youtu.be/7PCG35mjQEY) here. 
-
-You can find more Atari projects and tutorials in this [playlist](https://youtube.com/playlist?list=PLdkryDe59y4YOtOt2jqSjxGFe9BNh4wug)
-
+More relevant content in this playlis [tutorial](https://youtube.com/playlist?list=PLdkryDe59y4YOtOt2jqSjxGFe9BNh4wug) here. 
 
 Enjoy
 
