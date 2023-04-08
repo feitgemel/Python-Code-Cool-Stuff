@@ -16,7 +16,8 @@ In the second part of the tutorial, we'll teach you how to test CLIP on your own
 <br/><br/> 
 By the end of this tutorial, you'll have a solid understanding of how to implement CLIP AI and its powerful capabilities. Whether you're a beginner or an experienced AI developer, this tutorial is a valuable resource for anyone interested in the future of image analysis and natural language processing.
 <br/><br/> 
-More relevant content in this playlis [tutorial](https://youtube.com/playlist?list=PLdkryDe59y4YOtOt2jqSjxGFe9BNh4wug) here. 
+
+More relevant content in this [playlist](https://www.youtube.com/watch?v=ewvjICAaoX4&list=PLdkryDe59y4YOtOt2jqSjxGFe9BNh4wug)
 
 Enjoy
 
