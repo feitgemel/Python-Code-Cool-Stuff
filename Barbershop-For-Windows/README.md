@@ -14,7 +14,8 @@ In this tutorial, we'll show you how to change hairstyles and hair colors in you
 <br/><br/> 
 Discover how to revamp your photos and create stunning images that stand out from the crowd, with step-by-step instructions and example images.
 <br/><br/> 
-
+You can find the link for the [tutorial](https://youtu.be/gqw-DMQpliQ) here. 
+<br/><br/> 
 More relevant content in this [playlist](https://www.youtube.com/watch?v=ewvjICAaoX4&list=PLdkryDe59y4YOtOt2jqSjxGFe9BNh4wug) 
 
 Enjoy

@@ -15,6 +15,8 @@ In this tutorial, we'll show you how to use this powerful Python library to tran
 With our step-by-step guide and pre-trained model, you'll learn how to create unique and personalized stylized images in no time. 
 <br/><br/> 
 
+You can find the link for the [tutorial](https://youtu.be/7PCG35mjQEY) here. 
+
 More relevant content in this [playlist](https://www.youtube.com/watch?v=ewvjICAaoX4&list=PLdkryDe59y4YOtOt2jqSjxGFe9BNh4wug) 
 
 Enjoy
