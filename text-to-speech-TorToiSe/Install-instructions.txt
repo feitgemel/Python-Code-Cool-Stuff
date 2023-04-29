@@ -9,7 +9,7 @@ git clone https://github.com/neonbjb/tortoise-tts.git
 cd tortoise-tts
 
 conda create -n tts-voice python=3.8 
-conda activate tts
+conda activate tts-voice
 
 python setup.py install    
 
