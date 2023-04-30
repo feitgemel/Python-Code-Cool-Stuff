@@ -8,24 +8,42 @@ https://github.com/neonbjb/tortoise-tts
 git clone https://github.com/neonbjb/tortoise-tts.git
 cd tortoise-tts
 
-conda create -n tts-voice python=3.8 
-conda activate tts-voice
+conda create -n tts-voice2 python=3.8 
+conda activate tts-voice2
 
-python setup.py install    
+#install Pytorch from here : https://pytorch.org/get-started/locally/
+# what is my Cuda version :
+nvcc --version
 
-On Windows Install :
-conda install -c conda-forge pysoundfile
+#The following command is for Cuda 11.7.
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+
+pip install scipy==1.5.4
+pip install tqdm
+pip install rotary_embedding_torch
+pip install transformers==4.19
+pip install tokenizers
+pip install inflect
+pip install progressbar
+pip install einops==0.4.1
+pip install unidecode
+pip install librosa==0.9.1
+pip install numba==0.53
+pip install ffmpeg
+pip install numpy==1.20.0
 pip install torchaudio
-pip install six
-pip install llvmlite==0.39
 pip install threadpoolctl
-pip install numpy==1.22
-pip install importlib_metadata
-pip install numba==0.48.0
+pip install llvmlite
+pip install appdirs
 
+# run this command after pip install 
+python setup.py install
+
+#---------------------------------------------------------------------------------------------------
 
 # all the voices are in "tortoise/voices/" :
 # in this demo i choose : 'train_dotrice' 
+# the outcome will be store in the /results folder
 
 # Run the model :
 python tortoise/do_tts.py --text "Hi, Lets go to the mall to buy a new shirt" --voice train_dotrice --preset fast
