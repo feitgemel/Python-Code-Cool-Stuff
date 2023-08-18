@@ -1,0 +1,61 @@
+Roop
+https://github.com/s0md3v/roop
+===========================================
+
+git clone https://github.com/s0md3v/roop.git
+cd roop
+
+conda create --name videoClone python=3.10
+conda activate videoClone 
+
+conda install -c conda-forge ffmpeg
+pip install -r requirements.txt
+
+# copy expmaple files :
+copy face image to the roop folder
+copy a video (to be replaced) to the roop folder
+
+
+# If you are using Windows You should also install :
+
+1. Microsoft Visual C++ Redistributable : https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170
+2. Microsoft C++ Build Tools : https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+
+#Run command - no GPU :
+=======================
+
+1. If you don't have Gpu card :
+
+python run.py
+-----------------------------------------
+
+2. If you have Gpu card :
+
+pip uninstall onnxruntime onnxruntime-gpu
+pip install onnxruntime-gpu==1.15.1
+
+#Run command - With GPU :
+python run.py --execution-provider cuda
+---------------------------------------------
+
+a. Choose your image
+b. CHoose your target video
+c. click Start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

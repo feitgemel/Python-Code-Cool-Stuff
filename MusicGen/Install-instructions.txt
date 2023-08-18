@@ -1,0 +1,34 @@
+https://github.com/facebookresearch/audiocraft
+===========================================
+
+conda create --name mus python=3.10.6
+conda activate mus 
+
+# -> get cuda version
+nvcc --version
+
+Install Pytorch for for Cuda 11.17 :
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+
+git clone https://github.com/facebookresearch/audiocraft.git
+cd audiocraft.git
+
+# install more Python libraries :
+pip install -e .
+
+# install ffmpeg :
+conda install -c conda-forge ffmpeg
+
+# run the web UI :
+python -m demos.musicgen_app
+
+# copy to URL to your browser
+
+# step 1:
+# choose the melody model
+# duration : 10 seconds
+# add a prompt text : "medieval quiet music , harp and a flute"
+
+# Step2 :
+# duration : 30 seconds
+# choose the BACH from below with the text : "Rock music from the 90s"

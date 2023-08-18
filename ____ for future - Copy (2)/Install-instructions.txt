@@ -1,0 +1,42 @@
+SoftVC VITS Singing Voice Conversion Fork
+-----------------------------------------
+
+https://github.com/voicepaw/so-vits-svc-fork
+===========================================
+
+
+conda create -n so python=3.10
+conda activate so
+
+python -m pip install -U pip setuptools wheel
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+pip install -U so-vits-svc-fork
+
+
+# Run the "svcg" command to run the application : 
+svcg
+
+
+
+
+
+
+
+
+#pip install -U torch torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+
+git clone https://github.com/sczhou/CodeFormer.git
+cd CodeFormer
+
+
+#################### pip install -r requirements.txt
+
+# install Pytorch since the requirements.txt inatall the cpu and not Gpu
+# ======================================================================
+
+# -> get cuda version
+nvcc --version
+
+Install Pytorch for for Cuda 11.16 :
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia

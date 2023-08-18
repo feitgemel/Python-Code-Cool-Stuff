@@ -1,0 +1,61 @@
+https://github.com/OpenTalker/SadTalker
+===========================================
+
+
+
+git clone https://github.com/Winfredy/SadTalker.git
+cd SadTalker 
+
+
+
+
+
+
+conda create --name sad python=3.10.6
+conda activate sad 
+
+#Install ffmpeg first :
+conda install -c conda-forge ffmpeg
+
+
+# -> get your cuda version
+nvcc --version
+
+Install Pytorch for for Cuda 11.16 :
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+
+pip install -r requirements.txt
+
+
+#Download the checkpoint models from here : 
+copy the download.bat file the main folder , and run it
+download.bat
+
+-----------------------------------------------------------------------------------------------------------------
+# run the Sad Talker model:
+
+# Animating a portrait image from default config:
+
+python inference.py --driven_audio <audio.wav> \
+                    --source_image <video.mp4 or picture.png> \
+                    --enhancer gfpgan 
+
+# my demo :
+# ---------
+python inference.py --driven_audio french-female.wav --source_image Lilach_face.png --enhancer gfpgan
+
+
+------------------------------------------------------------------------------------------------------------------------
+# Full body/image Generation:
+Using --still to generate a natural full body video. You can add enhancer to improve the quality of the generated video.
+
+python inference.py --driven_audio <audio.wav> \
+                    --source_image <video.mp4 or picture.png> \
+                    --result_dir <a file to store results> \
+                    --still \
+                    --preprocess full \
+                    --enhancer gfpgan 
+
+# my demo :
+# ---------
+python inference.py --driven_audio french-female.wav --source_image woman-talking-noAudio.mp4 --enhancer gfpgan --result_dir results --still --preprocess full --enhancer gfpgan 

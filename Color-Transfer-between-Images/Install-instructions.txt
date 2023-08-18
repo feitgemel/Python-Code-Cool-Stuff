@@ -1,0 +1,22 @@
+
+# Requirements : Nvidia GPU card & and Cuda tool kit install
+# I am using this card : https://amzn.to/3mTa7HX
+# Working Anaconda enviroment
+
+https://github.com/chia56028/Color-Transfer-between-Images
+==========================================================
+
+git clone https://github.com/chia56028/Color-Transfer-between-Images
+cd Color-Transfer-between-Images
+
+conda create -n color python=3.8
+conda activate color  
+
+
+pip install numpy
+pip install opencv-python
+
+# look at the code of color_transfer.py 
+# it was made for 6 images (sourch + target)
+
+python color_transfer.py

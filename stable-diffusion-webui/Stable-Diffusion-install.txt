@@ -1,0 +1,70 @@
+Stable diffusion
+
+Lexica - Good site for search for exmaple : New york city
+And you can also get the promt
+
+https://lexica.art/
+
+
+
+#Website2 to generate images :
+https://dreamstudio.ai/generate
+
+
+Local Install :
+===============
+
+# Begin -> https://www.youtube.com/watch?v=kqXpAKVQDNU
+
+
+
+
+Download models from : 
+https://civitai.com/
+Change the menu on the right side to all times
+
+then download the first three models (click inside the image and downlod) : 
+these three model : Deliberate, 
+
+copy the download files to folder :".....stable-diffusion-webui\models\Stable-diffusion"
+set COMMANDLINE_ARGS= --xformers --autolaunch --ckpt-dir "e:\Stable-diffusion"
+
+copy styles.xls from here : https://www.patreon.com/posts/sebs-hilis-79649068 
+and copy it to the the main folder
+than after the prompt "cat with a hat" choose a style in the right side : "default_negative" and "digital/oil painting" and click the generate button
+
+
+Go to the extenstion tab 
+then choose the under tab "avaiable" and click the button "load from"
+
+look for "Aspect Ratio selector UI related" and click the "install" button in the same line in the right
+look for "sd-webui-controlnet manipulations" and install it
+look for "Canvas Zoom UI related" and install it 
+after install go to the "installed" tab and click the "apply and restart ui"
+
+Download this uplscaler
+NMKD Siax 4x upscaler model NMKD Siax : https://icedrive.net/s/43GNBihZyi
+
+# ControlNet models
+Download from here : https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main
+the ".safetensor" files.
+
+and copy ..\inside stable-diffusion-webui\extensions\sd-webui-controlnet\models.
+
+
+-------------------------------------------------------------------------------------------
+More install : Automatic Pose Transfer !!!!
+
+Automatic Pose Transfer Tutorial : https://youtu.be/ci7NfTsifd0
+
+The Git-Hub : https://github.com/Mikubill/sd-webui-controlnet
+
+#Add to your conda enviroment :
+pip install opencv-python
+
+# Go to the Automatic1111 webui , click on Extentions tab -> click on "install from URL" tab and paste
+# the GitHub url "https://github.com/Mikubill/sd-webui-controlnet" and click on Install button
+
+# now donwload the models from here : https://huggingface.co/lllyasviel/ControlNet-v1-1/tree/main
+# and copy to "...\stable-diffusion-webui\extensions\sd-webui-controlnet\models"
+# Please notice -> It is under extetions !!!!!

@@ -1,0 +1,114 @@
+https://github.com/sczhou/CodeFormer
+===========================================
+
+conda create --name Codeformer python=3.10
+conda activate Codeformer 
+
+
+git clone https://github.com/sczhou/CodeFormer.git
+cd CodeFormer
+
+
+#################### pip install -r requirements.txt
+
+# install Pytorch since the requirements.txt inatall the cpu and not Gpu
+# ======================================================================
+
+# -> get cuda version
+nvcc --version
+
+Install Pytorch for for Cuda 11.16 :
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+
+pip install addict
+pip install future
+pip install lmdb
+pip install numpy
+pip install opencv-python
+pip install Pillow
+pip install pyyaml
+pip install requests
+pip install scikit-image
+pip install scipy
+pip install tb-nightly
+pip install tqdm
+pip install yapf
+pip install lpips
+pip install gdown
+
+# more commands :
+python basicsr/setup.py develop
+conda install -c conda-forge dlib
+
+# download pre-trained models :
+
+python scripts/download_pretrained_models.py facelib
+python scripts/download_pretrained_models.py dlib 
+python scripts/download_pretrained_models.py CodeFormer
+
+copy the fixed file crop_align_face.py to scripts folder !!!
+
+---------------------------------------------------------------------------------------------------
+#copy your images to : "inputs/TestWhole"
+
+if you would like to crop(!!!) the faces in images you can use this command :
+python scripts/crop_align_face.py -i [input folder] -o [output folder]
+
+
+1. 🧑🏻 Face Restoration (cropped and aligned face)
+# For cropped and aligned faces (512x512)
+python inference_codeformer.py -w 0.5 --has_aligned --input_path [image folder]|[image path]
+
+🖼️ Whole Image Enhancement
+# For whole image
+# Add '--bg_upsampler realesrgan' to enhance the background regions with Real-ESRGAN
+# Add '--face_upsample' to further upsample restorated face with Real-ESRGAN
+# Add -w --fidelity_weight
+
+# sample : 
+#python inference_codeformer.py -w 0.7 --input_path [image folder]|[image path]
+
+# run this command for upscale images : 
+#####################################
+python inference_codeformer.py --input_path inputs/whole_imgs --output_path results -w 0.7 --bg_upsampler realesrgan --face_upsample
+--------------------------------------------------------------------------------------------------------------------------
+2. 🎬 Video Enhancement
+
+please install ffmpeg first :
+conda install -c conda-forge ffmpeg
+
+# For video clips
+# Video path should end with '.mp4'|'.mov'|'.avi'
+
+python inference_codeformer.py --bg_upsampler realesrgan --face_upsample -w 1.0 --input_path [video path]
+python inference_codeformer.py --bg_upsampler realesrgan --face_upsample -w 1.0 --input_path video/Startrek.avi
+
+----------------------------------------------------------------------------------------------------------
+3. 🌈 Face Colorization (cropped and aligned face)
+
+We have 3 steps :
+
+
+#step 1 :crop your gray image 
+copy your image to whole_imgs folder
+
+# run the crop command :
+python scripts/crop_align_face.py -i [input folder] -o [output folder]
+
+Option 2 : If you run with no paramters the whole_imgs folder will be the input and the cropped folder will be the output
+python scripts/crop_align_face.py
+
+# step 2 : copy the face gray image to "inputs\gray_faces" folder 
+
+# Step 3 : run the color process For cropped and aligned faces (512x512)
+# Colorize black and white or faded photo
+
+python inference_colorization.py --input_path [image folder]|[image path]
+
+# if it is in the defalut gray folder , You can run :
+python inference_colorization.py
+
+Now , go to "results\gray_faces" folder and you can find your color image
+
+------------------------------------------------------------------------------------------------
+

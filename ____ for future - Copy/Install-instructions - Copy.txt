@@ -1,0 +1,49 @@
+https://github.com/brycedrennan/imaginAIry
+===========================================
+
+First try on Windows on the E drive
+
+seocond : run on Wsl Ubuntu
+
+conda create --name dual python=3.8.3
+conda activate dual  
+
+git clone https://github.com/williamyang1991/DualStyleGAN.git
+cd DualStyleGAN
+
+# -> get cuda version
+nvcc --version
+
+Install Pytorch for for Cuda 11.16 :
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+
+pip install matplotlib==3.4.2
+pip install opencv-python==4.5.3.56
+pip install ninja==1.10.2
+pip install numpy==1.21.0
+pip install tqdm==4.61.2
+pip install scipy==1.7.0 
+
+Download model from here : https://drive.google.com/drive/folders/1GZQ6Gs5AzJq9lUL-ldIQexi0JYPKNy8b
+
+copy the check points in this stucture
+
+checkpoint
+|--encoder.pt                     % Pixel2style2pixel model
+|--encoder_wplus.pt               % Pixel2style2pixel model (optional)
+|--cartoon
+    |--generator.pt               % DualStyleGAN model
+    |--sampler.pt                 % The extrinsic style code sampling model
+    |--exstyle_code.npy           % extrinsic style codes of Cartoon dataset
+    |--refined_exstyle_code.npy   % refined extrinsic style codes of Cartoon dataset
+|--caricature
+    % the same files as in Cartoon
+...
+
+
+# run 
+
+python style_transfer.py 
+
+
+
