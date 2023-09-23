@@ -1,8 +1,8 @@
 # please follow first the install settings before coding , like creating the conda enviroment
 # important - the Python vscode home directory shold be the Deoldify directory 
 
-from deoldify import device 
-from deoldify.device_id import DeviceId
+from Deoldify import device 
+from Deoldify.device_id import DeviceId
 
 # checking for Cuda (GPU)
 
@@ -13,7 +13,7 @@ if not torch.cuda.is_available():
     print('GPU is not avaiable')
 
 import fastai
-from deoldify.visualize import *
+from Deoldify.visualize import *
 import warnings
 warnings.filterwarnings("ignore",category=UserWarning,message=".*?Your .*? set is empty.*?")
 

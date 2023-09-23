@@ -46,19 +46,3 @@ Add the audio :
 ============
 ffmpeg -an -i myResult.mp4 -vn -i assets/french.mp4 -c:a copy -c:v copy myResult_withAudio.mp4
 
-# no need
-pip install cffi==1.14.6
-pip install cycler==0.10.0
-pip install decorator==5.1.0
-pip install kiwisolver==1.3.2
-pip install networkx==2.6.3
-pip install numpy==1.20.3
-pip install pandas==1.3.3
-pip install pycparser==2.20
-pip install pyparsing==2.4.7
-pip install python-dateutil==2.8.2
-pip install pytz==2021.1
-pip install PyWavelets==1.1.1
-pip install six==1.16.0
-
-

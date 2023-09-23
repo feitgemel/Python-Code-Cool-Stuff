@@ -41,6 +41,12 @@ wget https://github.com/TencentARC/GFPGAN/releases/download/v0.2.0/GFPGANCleanv1
 # copy your images to a new folder named 'media'
 # run the model on my images stored images :
 
-python inference_gfpgan.py --upscale 2 --test_path media --save_root results 
+# new version !!!!!!!!!!!!!!!!! :
+python inference_gfpgan.py -s 2 -i media -o results
+
+
+# old version (Not relevant):
+#python inference_gfpgan.py --upscale 2 --test_path media --save_root results 
+
 
 

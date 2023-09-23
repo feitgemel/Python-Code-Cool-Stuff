@@ -1,11 +1,38 @@
-textual inversion : Personalizing Text-to-Image Generation using Textual Inversion
+Infinigen: Infinite Photorealistic Worlds using Procedural Generation
 ================================================
 
 run on Wsl Ubuntu
 =================
 
-git clone https://github.com/rinongal/textual_inversion
-cd textual_inversion
+https://github.com/princeton-vl/infinigen
+
+git clone --recursive https://github.com/princeton-vl/infinigen.git
+cd infinigen
+conda create --name infinigen python=3.10
+conda activate infinigen
+
+# take about 10 mintues:
+bash install.sh
+
+cd blender
+pwd
+# copy the full path :
+
+export BLENDER="/mnt/c/python-cool-stuff/infinigen/blender/blender"
+
+cd worldgen
+mkdir outputs
+
+# Generate a scene layout
+BLENDER -noaudio --background --python generate.py -- --seed 0 --task coarse -g desert.gin simple.gin --output_folder outputs/helloworld/coarse
+
+
+
+# For videos:
+bash install.sh flip_fluids
+bash install.sh opengl
+
+
 
 
 conda env create -f environment.yaml
