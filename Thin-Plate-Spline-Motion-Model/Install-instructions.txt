@@ -1,9 +1,9 @@
 
-https://github.com/rgl-epfl/differentiable-sdf-rendering
-==============================================
+https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
+=========================================================
 
-conda create -n moveFace python=3.9
-conda activate moveFace 
+conda create -n moveFace39 python=3.9
+conda activate moveFace39 
 
 git clone https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model.git
 cd Thin-Plate-Spline-Motion-Model
@@ -35,7 +35,9 @@ python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar
 copy Eran.jpg and french.mp4 to the assests folder
 
 More options :
-python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/Eran.jpg --driving_video assets/french.mp4 --find_best_frame --result_video myResult.mp4
+python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/pic4.jpg --driving_video assets/french.mp4 --find_best_frame --result_video myResult.mp4
+
+python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/pic4.jpg --driving_video assets/french.mp4 --result_video myResult.mp4
 
 more : 
 --find_best_frame
@@ -44,5 +46,5 @@ more :
 
 Add the audio :
 ============
-ffmpeg -an -i myResult.mp4 -vn -i assets/french.mp4 -c:a copy -c:v copy myResult_withAudio.mp4
+ffmpeg -an -i myResult.mp4 -vn -i assets/french.mp4 -c:a copy -c:v copy  myResult_withAudio.mp4
 
