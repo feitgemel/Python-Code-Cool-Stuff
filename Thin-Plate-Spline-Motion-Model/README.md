@@ -20,7 +20,6 @@ The tutorial is divided into five parts:
 🚀 Part 3: Download the Model Weights
 
 🔮 Part 4: Run a demo , and Use Your Own Images and Video
-
 <br/><br/> 
 
 You can find the link for the [tutorial](https://youtu.be/taJOpKa63RU) here. 
