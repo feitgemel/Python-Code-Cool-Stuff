@@ -13,17 +13,6 @@ Image animation brings life to the static face in the source image according to 
 
 The tutorial is divided into five parts:
 
-1. Setting up the Environment: We'll walk you through creating a Conda environment with the right Python libraries to ensure a smooth animation process.
-
-2. Cloning the GitHub Repository
-
-3. Downloading Model Weights
-
-4. Demo 1: Running a Demo
-
-5. Demo 2: Using Your Own Images and Video
-
-
 🖼️ Part 1: Setting up the Environment: We'll walk you through creating a Conda environment with the right Python libraries to ensure a smooth animation process.
 
 🧠 Part 2: Cloning the GitHub Repository
