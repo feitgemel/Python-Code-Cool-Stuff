@@ -46,7 +46,7 @@ Before we continue , I actually recommend this [book](https://amzn.to/3STWZ2N) f
 <font size= "4" >
 If you have any suggestions about papers, feel free to mail me :)
 
-- [▶️ Youtube.com/@eranfeit](youtube.com/@eranfeit?sub_confirmation=1)
+- [▶️ Youtube.com/@eranfeit](https://www.youtube.com/channel/UCTiWJJhaH6BviSWKLJUM9sg)
 - [🐙 Facebookl](https://www.facebook.com/groups/3080601358933585)
 - [🖥️ Email](mailto:feitgemel@gmail.com)
 - [🐦 Twitter](https://twitter.com/eran_feit )
