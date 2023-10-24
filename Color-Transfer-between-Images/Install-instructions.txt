@@ -9,8 +9,8 @@ https://github.com/chia56028/Color-Transfer-between-Images
 git clone https://github.com/chia56028/Color-Transfer-between-Images
 cd Color-Transfer-between-Images
 
-conda create -n color python=3.8
-conda activate color  
+conda create -n colorTransfer python=3.8
+conda activate colorTransfer  
 
 
 pip install numpy
