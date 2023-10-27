@@ -1,0 +1,27 @@
+rem run from the repository directory
+rem ================================
+
+mkdir checkpoints
+
+echo "downloading from filebox ..."
+wget https://filebox.ece.vt.edu/~jbhuang/project/3DPhoto/model/color-model.pth
+wget https://filebox.ece.vt.edu/~jbhuang/project/3DPhoto/model/depth-model.pth
+wget https://filebox.ece.vt.edu/~jbhuang/project/3DPhoto/model/edge-model.pth
+wget https://filebox.ece.vt.edu/~jbhuang/project/3DPhoto/model/model.pt
+
+
+move color-model.pth checkpoints
+move depth-model.pth checkpoints
+move edge-model.pth checkpoints
+move model.pt MiDaS
+
+
+echo "cloning from BoostingMonocularDepth ..."
+git clone https://github.com/compphoto/BoostingMonocularDepth.git
+mkdir BoostingMonocularDepth\pix2pix\checkpoints\mergemodel
+
+echo "downloading mergenet weights ..."
+wget https://filebox.ece.vt.edu/~jbhuang/project/3DPhoto/model/latest_net_G.pth
+move latest_net_G.pth BoostingMonocularDepth\pix2pix\checkpoints\mergemodel
+wget https://github.com/intel-isl/MiDaS/releases/download/v2/model-f46da743.pt
+move model-f46da743.pt BoostingMonocularDepth\midas\model.pt
