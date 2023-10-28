@@ -18,8 +18,7 @@ The tutorial is divided into 3  parts:
 
 🧠 Part 2: Running the models on one image and audio file .
 
-🚀 Part 3: Running the models on both : video and audio files
-
+🚀 Part 3: Running the models on both : video and audio files. 
 <br/><br/> 
 
 You can find the link for the [tutorial](https://youtu.be/dqkM0lxrruQ) here. 
