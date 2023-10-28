@@ -1,18 +1,11 @@
 https://github.com/OpenTalker/SadTalker
 ===========================================
 
-
-
-git clone https://github.com/Winfredy/SadTalker.git
+git clone https://github.com/OpenTalker/SadTalker.git
 cd SadTalker 
 
-
-
-
-
-
-conda create --name sad python=3.10.6
-conda activate sad 
+conda create --name sadTalk python=3.10.6 
+conda activate sadTalk 
 
 #Install ffmpeg first :
 conda install -c conda-forge ffmpeg
@@ -28,7 +21,7 @@ pip install -r requirements.txt
 
 
 #Download the checkpoint models from here : 
-copy the download.bat file the main folder , and run it
+copy the download.bat file (from my Github repo folder) to the main folder , and run it
 download.bat
 
 -----------------------------------------------------------------------------------------------------------------
@@ -58,4 +51,6 @@ python inference.py --driven_audio <audio.wav> \
 
 # my demo :
 # ---------
-python inference.py --driven_audio french-female.wav --source_image woman-talking-noAudio.mp4 --enhancer gfpgan --result_dir results --still --preprocess full --enhancer gfpgan 
+python inference.py --driven_audio french-female.wav --source_image woman-talking-noAudio.mp4 --enhancer gfpgan --result_dir results --still --preprocess full 
+
+
