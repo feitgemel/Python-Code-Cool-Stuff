@@ -1,27 +1,28 @@
-# Lip sync | Bring Your Image to Life using Sadtalker 🌟
+# Change a Face in a Video with One Of Your Own 😎 | using Roop 🌟
 
 <p align="center">
-  <img width="800" src="SadTalker - Bring Your Image to Life with Audio.png" "image">
+  <img width="800" src="Roop - Deep fake - Face swapper" "image">
 </p>
 
 ##
 <br/><br/> 
 
 <font size= "4" >
-In this tutorial we will use the Sadtalker in order to bring an image and video back to life , along with lip sync.
+In this tutorial, we're diving into the world of deepfakes and face swapping using the Roop Python library. 
+The goal of this video is to replace faces in a video with just one image, without the need for training or extensive datasets. 
+You'll be able to create face swap effects in no time.
 
 <br/><br/> 
 
-The tutorial is divided into 3 parts:
+The tutorial is divided into 2 parts:
 
-🖼️ Part 1: Setting up a Conda environment for seamless development and Installing essential Python libraries.
+🖼️ Part 1: Setting Up the Environment: Setting up the proper environment by creating a Conda environment , installing the Roop library and other essential Python packages. 
 
-🧠 Part 2: Running the models on one image and audio file .
+🧠 Part 2: Running the App: Once your environment is ready, We'll show you how to run the app using your input files : video and any face image.
 
-🚀 Part 3: Running the models on both : video and audio files. 
 <br/><br/> 
 
-You can find the link for the [tutorial](https://youtu.be/dqkM0lxrruQ) here. 
+You can find the link for the [tutorial](https://youtu.be/2wqHbrD2x4o) here. 
 
 You can find more cool Python projects and tutorials in this [playlist]https://www.youtube.com/playlist?list=PLdkryDe59y4bxVvpexwR6PMTHH6_vFXjA)
 

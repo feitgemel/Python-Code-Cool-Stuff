@@ -1,8 +1,8 @@
 https://github.com/facebookresearch/audiocraft
-===========================================
+==============================================
 
-conda create --name mus python=3.10.6
-conda activate mus 
+conda create --name audiocraft python=3.10.6
+conda activate audiocraft
 
 # -> get cuda version
 nvcc --version
@@ -11,7 +11,7 @@ Install Pytorch for for Cuda 11.17 :
 conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 
 git clone https://github.com/facebookresearch/audiocraft.git
-cd audiocraft.git
+cd audiocraft
 
 # install more Python libraries :
 pip install -e .
@@ -31,4 +31,5 @@ python -m demos.musicgen_app
 
 # Step2 :
 # duration : 30 seconds
-# choose the BACH from below with the text : "Rock music from the 90s"
+# choose the BACH audio file from "asset" folder 
+# add the text : "Rock music from the 90s"

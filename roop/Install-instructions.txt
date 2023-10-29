@@ -1,12 +1,12 @@
-Roop
+Roop :
 https://github.com/s0md3v/roop
 ===========================================
 
 git clone https://github.com/s0md3v/roop.git
 cd roop
 
-conda create --name videoClone python=3.10
-conda activate videoClone 
+conda create --name roop python=3.10
+conda activate roop
 
 conda install -c conda-forge ffmpeg
 pip install -r requirements.txt
@@ -19,6 +19,7 @@ copy a video (to be replaced) to the roop folder
 # If you are using Windows You should also install :
 
 1. Microsoft Visual C++ Redistributable : https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170
+
 2. Microsoft C++ Build Tools : https://visualstudio.microsoft.com/visual-cpp-build-tools/
 
 
