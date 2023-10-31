@@ -22,7 +22,7 @@ The tutorial is divided into 2 parts:
 
 🧠 Part 2: Running the App: Once your environment is ready, We'll show you how to run the with your text prompt , use your input audio files as well.
 
-<br/><br/> 
+<br/>
 
 You can find the link for the [tutorial](https://youtu.be/zrDIY-JqNrU) here. 
 
