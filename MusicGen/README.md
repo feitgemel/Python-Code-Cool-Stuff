@@ -14,7 +14,7 @@ You will discover how to set up your environment, and explore the the capabiliti
 
 Learn how to craft unique music using text prompts and even merge existing audio files with AI-generated compositions. 📝🔊
 
-<br/><br/> 
+<br/>
 
 The tutorial is divided into 2 parts:
 
