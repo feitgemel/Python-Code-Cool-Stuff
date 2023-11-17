@@ -22,6 +22,7 @@ Download "imagenet-vgg-verydeep-19" , VGG-19 model weights from http://www.vlfea
 and put it on the repo project direcory : 
 
 convert image :
+===============
 python neural_style.py  --content_img lion.jpg --content_img_dir C:/Python-Cool-Stuff/neural-style-tf/image_input --style_imgs starry-night.jpg --style_imgs_dir C:/Python-Cool-Stuff/neural-style-tf/styles --device /cpu:0 --verbose
 
 
