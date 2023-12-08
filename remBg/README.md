@@ -1,7 +1,7 @@
 # Easy Background Removal tutorial with Python 🌟
 
 <p align="center">
-  <img width="800" src="Python-Code-Cool-Stuff\remBg\how to remove background form a picture.png" "image">
+  <img width="800" src="how to remove background form a picture.png" "image">
 </p>
 
 ##
