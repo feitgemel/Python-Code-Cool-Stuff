@@ -16,7 +16,7 @@ GFPGAN leverages pretrained face GANs like StyleGAN2, providing a sophisticated 
 <br/><br/> 
 
 
-The tutorial is divided into four parts:
+The tutorial is divided into 3 parts:
 
 🖼️ Part 1: Setting up a Conda environment for seamless development and Installing essential Python libraries.
 
