@@ -11,9 +11,6 @@
 Discover how to convert photo into painting using image to painting AI.
 Turn your photo into painting with photo to painting AI technology.
 
-Why GFPGAN?
-GFPGAN leverages pretrained face GANs like StyleGAN2, providing a sophisticated solution for blind face restoration. Whether you're a beginner or an experienced Python enthusiast, this tutorial is tailored for everyone.
-
 <br/><br/> 
 
 
