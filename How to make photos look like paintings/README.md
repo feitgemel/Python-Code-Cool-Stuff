@@ -1,7 +1,7 @@
 # How to make photos look like paintings
 
 <p align="center">
-  <img width="800" src="How to improve low resolution images quality using GfpGan.png" "image">
+  <img width="800" src="How to turn a photo into painting.png" "image">
 </p>
 
 ##
