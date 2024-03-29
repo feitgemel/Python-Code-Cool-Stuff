@@ -1,0 +1,64 @@
+# Requirements : Nvidia GPU card & and Cuda tool kit install
+# I am using this card : https://amzn.to/3mTa7HX
+# Working Anaconda enviroment
+
+===============================================================================================================
+# You should install Miniconda installed . If it is not already installed :
+Here are the steps to install Miniconda on Linux:
+
+1. Download Miniconda installer Go to the Miniconda download page: https://docs.conda.io/en/latest/miniconda.html Download the latest version of the Miniconda installer script for Linux. You can choose between Python 2 or Python 3 versions.
+2. Run the installer script Open a terminal and navigate to the directory where you downloaded the installer script. Run the following command to make the script executable:
+
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+
+Then run the script:
+./Miniconda3-latest-Linux-x86_64.sh
+
+
+3. Follow the installer prompts The installer will prompt you to review the license agreement. Press Enter to view it, type "yes" to accept and continue. It will then ask you to specify the installation location. You can press Enter to use the default location (your home directory).
+
+4. Initialize Miniconda After installation, you need to initialize Miniconda. The installer should prompt you to run either . ~/.bashrc or source ~/.bashrc to do this.
+
+5. Verify installation Once initialized, you should be able to run conda commands. Test it by running:
+conda --version
+
+This should print the installed Conda version.
+
+===============================================================================================================
+
+
+git clone https://github.com/Rudrabha/Wav2Lip.git
+cd Wav2Lip
+
+conda create -n python-wav2lip python=3.6
+conda activate python-wav2lip
+
+# Download the following files and copy them to the 'checkpoints' folder
+wget "https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/EdjI7bZlgApMqsVoEUUXpLsBxqXbn5z8VTmoxp55YNDcIA?e=n9ljGW" -O checkpoints/wav2lip_gan.pth
+
+wget "https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/Eb3LEzbfuKlJiR600lQWRxgBIY27JZg80f7V9jtMfbNDaQ?e=TBFBVW" -O checkpoints/wav2lip.pth
+
+pip install librosa==0.7.0
+pip install numpy==1.17.1
+pip install opencv-contrib-python>=4.2.0.34
+pip install opencv-python==4.1.0.25
+
+# Install PyTorch with your(!!!) CUDA support.
+Example command for my Cuda toolkit
+conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
+
+pip install tqdm==4.45.0
+pip install numba==0.48
+
+# Download the face detection model
+wget https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth
+
+# Install FFmpeg
+sudo apt-get update
+sudo apt-get install ffmpeg
+
+# Copy video and audio files to a new 'Media' folder (keep them short, around 20 seconds)
+# Important: The video should have faces in all of its frames
+
+# Running the lip-syncing video using the pre-trained models (Inference)
+python inference.py --checkpoint_path checkpoints/wav2lip_gan.pth --face media/indi1.mp4 --audio media/yochpaz.wav --outfile results/indi1.mp4
