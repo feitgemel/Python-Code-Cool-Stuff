@@ -22,11 +22,13 @@ Copy the file wav2lip.pth to checkpoints folder
 
 pip install librosa==0.7.0
 pip install numpy==1.17.1
-pip install opencv-contrib-python>=4.2.0.34
+pip install opencv-contrib-python==4.2.0.34 
 pip install opencv-python==4.1.0.25
 conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly -c pytorch
 pip install tqdm==4.45.0
-pip install numba==0.48
+pip install resampy==0.2.2
+pip install numba==0.48 
+
 
 Download this file : https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth
 and copy it to the Wav2lip folder
