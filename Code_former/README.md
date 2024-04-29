@@ -7,6 +7,15 @@
 ##
 <br/><br/> 
 
+**<font size="5">Hi there,
+I've devoted a lot of time and effort to creating this content. <br/> 
+If you could show your appreciation by buying me a coffee, I would be truly grateful : https://ko-fi.com/eranfeit**
+
+<br/><br/>
+<font size= "7" >
+Summary : <br/>
+
+
 <font size= "4" >
 Welcome to our tutorial on super-resolution CodeFormer for images and videos ,
 In this step-by-step guide, you'll learn how to improve and enhance images and videos using super resolution models.

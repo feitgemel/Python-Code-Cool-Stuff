@@ -7,6 +7,14 @@
 ##
 <br>
 
+**<font size="5">Hi there,
+I've devoted a lot of time and effort to creating this content. <br/> 
+If you could show your appreciation by buying me a coffee, I would be truly grateful : https://ko-fi.com/eranfeit**
+
+<br/><br/>
+<font size= "7" >
+Summary : <br/>
+
 <font size= "4" >
 Step into the world of StyleGAN-Human, a cutting-edge AI technology that generates realistic human images. 
 This data-centric odyssey takes you on a journey through the power of machine learning and deep learning as it relates to human generation. 
