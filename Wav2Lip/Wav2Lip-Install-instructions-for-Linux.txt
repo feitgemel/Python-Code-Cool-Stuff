@@ -6,6 +6,13 @@
 # You should install Miniconda installed . If it is not already installed :
 Here are the steps to install Miniconda on Linux:
 
+
+
+
+Hi there,
+I've devoted a lot of time and effort to creating this content. 
+If you could show your appreciation by buying me a coffee for just $1, I would be truly grateful : https://ko-fi.com/eranfeit
+
 1. Download Miniconda installer Go to the Miniconda download page: https://docs.conda.io/en/latest/miniconda.html Download the latest version of the Miniconda installer script for Linux. You can choose between Python 2 or Python 3 versions.
 2. Run the installer script Open a terminal and navigate to the directory where you downloaded the installer script. Run the following command to make the script executable:
 
