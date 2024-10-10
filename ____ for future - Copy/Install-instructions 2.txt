@@ -1,0 +1,48 @@
+https://github.com/ShmuelRonen/VideoReTalking-HQ/tree/main
+======================================
+
+0. Run PowerShell in Administrator , and then run wsl 
+
+1. Choose your favorite folder for cloning :
+
+git clone https://github.com/ShmuelRonen/VideoReTalking-HQ.git
+cd VideoReTalking-HQ
+
+2. Create conda enviroment :
+
+conda create -n video_retalking python=3.8
+conda activate video_retalking
+
+
+3. Install 
+
+pip install ffmpeg
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+
+conda install -c conda-forge dlib
+pip install cmake
+
+pip install -r requirements.txt
+pip install ffmpeg-python
+pip install gradio
+pip install gfpgan
+
+4. download the models for this link : https://drive.google.com/file/d/12_3Df9LMTweNZHxlbjM851UCguRfjpru/view?usp=drive_link
+
+a. Download the archive from Google Drive to your computer.
+
+b. Extract the compressed checkpoints folder with 7zip.
+
+c. copy the checkpoints folder into the main VideoReTalking-HQ folder.
+
+
+
+5. Run the app:
+
+python app.py
+
+Open browser and copy this link : http://127.0.0.1:7860
+
+
+
+

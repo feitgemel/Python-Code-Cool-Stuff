@@ -1,49 +1,146 @@
-https://github.com/brycedrennan/imaginAIry
+https://github.com/Zejun-Yang/AniPortrait.git
 ===========================================
 
-First try on Windows on the E drive
+0. Run PowerShell in Administrator , and then run wsl 
 
-seocond : run on Wsl Ubuntu
+1. Choose your favorite folder for cloning :
 
-conda create --name dual python=3.8.3
-conda activate dual  
+git clone https://github.com/Zejun-Yang/AniPortrait.git
+cd AniPortrait
 
-git clone https://github.com/williamyang1991/DualStyleGAN.git
-cd DualStyleGAN
+2. Create conda enviroment :
 
-# -> get cuda version
-nvcc --version
+conda create -n AniPortrait python=3.11
+conda activate AniPortrait 
 
-Install Pytorch for for Cuda 11.16 :
-conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+3. Install :
 
-pip install matplotlib==3.4.2
-pip install opencv-python==4.5.3.56
-pip install ninja==1.10.2
-pip install numpy==1.21.0
-pip install tqdm==4.61.2
-pip install scipy==1.7.0 
+conda install ffmpeg
 
-Download model from here : https://drive.google.com/drive/folders/1GZQ6Gs5AzJq9lUL-ldIQexi0JYPKNy8b
+edit the requirements.txt file and update the "torchsde==0.2.5" to "torchsde==0.2.6"
 
-copy the check points in this stucture
+pip install -r requirements.txt
+conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
 
-checkpoint
-|--encoder.pt                     % Pixel2style2pixel model
-|--encoder_wplus.pt               % Pixel2style2pixel model (optional)
-|--cartoon
-    |--generator.pt               % DualStyleGAN model
-    |--sampler.pt                 % The extrinsic style code sampling model
-    |--exstyle_code.npy           % extrinsic style codes of Cartoon dataset
-    |--refined_exstyle_code.npy   % refined extrinsic style codes of Cartoon dataset
-|--caricature
-    % the same files as in Cartoon
-...
+4. Download models weights : ~ 20 mintues of download 
+
+# install the CLI
+pip install -U "huggingface_hub[cli]"
+
+Run this command : 
+huggingface-cli download --resume-download ZJYang/AniPortrait --local-dir pretrained_model
 
 
-# run 
+5. Download more models :
 
-python style_transfer.py 
+# Go to the "pretrained_model" subfolder :
+cd pretrained_model
+
+Download 1:(stable-diffusion-v1-5)
+
+huggingface-cli download --resume-download stable-diffusion-v1-5/stable-diffusion-v1-5 --local-dir stable-diffusion-v1-5
+
+Download 2:(wav2vec2-base-960h)
+
+huggingface-cli download --resume-download facebook/wav2vec2-base-960h --local-dir wav2vec2-base-960h
 
 
+Download 3:(sd-vae-ft-mse)
+
+huggingface-cli download --resume-download stabilityai/sd-vae-ft-mse --local-dir sd-vae-ft-mse
+
+
+Download 4:(image_encoder)
+
+2 Files...
+
+wget -P image_encoder https://huggingface.co/lambdalabs/sd-image-variations-diffusers/raw/main/image_encoder/config.json
+
+Download the "https://huggingface.co/lambdalabs/sd-image-variations-diffusers/blob/main/image_encoder/pytorch_model.bin" 
+
+and copy it to the same "image_encoder" subfolder  
+
+--------------
+
+The final subfolders and files should be in this sturcture :
+
+./pretrained_model/
+|-- image_encoder
+|   |-- config.json
+|   `-- pytorch_model.bin
+|-- sd-vae-ft-mse
+|   |-- config.json
+|   |-- diffusion_pytorch_model.bin
+|   `-- diffusion_pytorch_model.safetensors
+|-- stable-diffusion-v1-5
+|   |-- feature_extractor
+|   |   `-- preprocessor_config.json
+|   |-- model_index.json
+|   |-- unet
+|   |   |-- config.json
+|   |   `-- diffusion_pytorch_model.bin
+|   `-- v1-inference.yaml
+|-- wav2vec2-base-960h
+|   |-- config.json
+|   |-- feature_extractor_config.json
+|   |-- preprocessor_config.json
+|   |-- pytorch_model.bin
+|   |-- README.md
+|   |-- special_tokens_map.json
+|   |-- tokenizer_config.json
+|   `-- vocab.json
+|-- audio2mesh.pt
+|-- audio2pose.pt
+|-- denoising_unet.pth
+|-- film_net_fp16.pt
+|-- motion_module.pth
+|-- pose_guider.pth
+`-- reference_unet.pth
+
+
+
+Inference:
+**********
+
+-> First fo back to the main folder . We will ran several infernces :
+
+a. Self driven :
+----------------
+
+1. Run an example (about 4 hours)
+the L 300 paramters makes it shorten : length of 300 
+
+python -m scripts.pose2vid --config ./configs/prompts/animation.yaml -W 512 -H 512 -acc -L 300
+
+
+Let's Create our own the face dots from my(!!!) own video. 
+
+"What a wonderful world" video : ככה ככה
+******************************
+You can refer the format of animation.yaml and change to your own image and video. 
+
+To convert the raw video into a pose video (keypoint sequence), you can run with the following command:
+
+
+# All the frames should have faces and the video should include sound !!!
+Run the command to generate the face dots :
+python -m scripts.vid2pose --video_path "My-videos/test2.mp4"
+
+# And then run agin this command with your own yaml file
+python -m scripts.pose2vid --config ./My-videos/animation-Eran.yaml -W 512 -H 512 -acc
+
+להוסיף עם פרוקדת MMPGE את הסאונד לסרטון
+לנסות אחר כך לעשות את אותו סרטון עם רזולוציה מקורית !!!!!
+
+===============================================================
+Face reenacment
+
+a. .edit the "animation_facereenac.yaml" in the configs/prompts folder
+
+b. update the last line : "./configs/inference/video/Aragaki_song.mp4" 
+    to "./configs/inference/head_pose_temp/pose_ref_video.mp4"
+
+c. run this command :
+
+python -m scripts.vid2vid --config ./configs/prompts/animation_facereenac.yaml -W 512 -H 512 -acc
 
