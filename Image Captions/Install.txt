@@ -1,0 +1,29 @@
+# Image to text !!
+
+# The model will find what is inside the image
+#Link for the model : https://huggingface.co/nlpconnect/vit-gpt2-image-captioning
+
+1. Conda enviroment :
+
+conda create --name image-captioning python=3.8
+conda activate image-captioning
+
+
+2. Pytorch :
+
+# Grt Cuda version
+nvcc --version
+
+# Install Pytorch
+# Cuda 11.8
+conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# Cuda 12.1
+conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# More libraries :
+pip install mkl==2021.4.0 
+pip install transformers
+pip install opencv-python
+
+

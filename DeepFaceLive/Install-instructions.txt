@@ -1,0 +1,79 @@
+https://github.com/iperov/DeepFaceLive
+======================================
+
+Real Time face swapper :
+#######################
+
+1. Download this file :
+https://mega.nz/folder/m10iELBK#Y0H6BflF9C4k_clYofC7yA
+
+If you are using Nvidida choost the last build version exe file
+Since it's about 2.2 Giga , you should wait about 10 minutes
+
+
+2. Run the exe file and Choose your favorite folder for extracting the files)
+(My folder would be "C:\Python-Cool-Stuff  )
+
+
+3. Go to the folder , and run : DeepFaceLive.bat
+
+4. Settings :
+
+a. Turn on the camera from the bottom left corener . You should see an automatic preview of the camera
+
+b. The face detector
+- choose one of the algorithm 
+- Choose a device : Your Gpu or Cpu
+
+c. Face aligner 
+- Leave the default values
+
+d. Face marker - Detecting and marking keypoint of the face
+- Choose the device
+
+--------------------------------------------------------------
+
+
+e. Turn on the "Face swap Insight"  :
+Now you can choose a face . Click on the "eye" icon for the folder of faces
+
+
+
+Face merger :
+ON the right change at the face merger to GPU as well 
+
+Stream output :
+- Click the window button to show the result in a new windows
+- click the source and merged for display both results 
+
+
+
+------------------------------------------------------------------
+turn off "Face swap Insight" and turn on face swap (DFM)
+DFM means that someone trained faces with more angles and more motions ,
+So the result should be better : (It is not based on a single photo )
+
+You should wait a few more second for loading the model
+
+You can see that the resuls are better. Try to pintch you chick
+
+Here are links wherer people share DFM models :
+https://discord.com/invite/HK4rvehcyJ
+https://discord.com/invite/uUnzZby6rV
+
+Lets search for "Harrison Ford" and download the files
+Copy the files into userdata/dfm_models
+
+
+
+
+----------------------------------------------------------------------
+Turn of face swap and turn on face animator
+Choose an image
+It will copy yout face impressions into to the still image
+
+Open eyes, smile , open the mouth
+-------------------------------------------------------------------
+
+
+ 

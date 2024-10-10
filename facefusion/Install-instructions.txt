@@ -1,0 +1,55 @@
+FaceFusion
+----------
+
+# Enviroment :
+==============
+
+conda create --name facefusion python=3.10
+conda activate facefusion
+
+Clone the repo :
+==============
+git clone https://github.com/facefusion/facefusion
+cd facefusion
+
+
+# Install The Application
+python install.py
+
+# Run : (Choose your Cuda version from the list after) <enter>
+python run.py
+
+# In the first run there will be some downloads
+# open the browser with the link : (sample link : http://127.0.0.1:7860)
+
+In the app view :
+
+1. choose face_enhancer
+2. Choose Cuda 
+
+3. source -> choose the image you would like to use . (Lilach_face.jpg)
+
+# Image :
+4. Target -> The target face image 
+5. Wait until the reference face will get all the faces
+6. Choose a face and wait for the result in the preview
+7. Click the "Start" button to start the swap process
+
+#Video :
+8. Target -> The target face video
+9. Wait until the reference face will get all the faces
+10. Choose a face and wait for the result in the preview
+11. Parameters :
+
+Turn on :
+face_swapper
+face_enhancer
+
+Activate :
+cuda and cpu
+
+rerfence face distance = 0.7
+face mask blur == 0.8
+
+11. Click the "Start" button to start the swap process
+--> Look at the command prompt to see the progress

@@ -1,0 +1,56 @@
+Grounded-Segment-Anything
+=================================================================
+
+0. Open Powershell as Admin, and run wsl.exe for start Lynux machine
+
+
+1. Setup Cuda variable :
+
+echo $CUDA_HOME
+it print nothing, then it means you haven't set up the path/
+
+export CUDA_HOME=/usr/local/cuda
+
+2. Go to the your selected folder . My is : "Python-Cool-Stuff"
+
+git clone https://github.com/IDEA-Research/Grounded-Segment-Anything
+cd Grounded-Segment-Anything
+
+3. Create conda enviroment
+
+conda create -n GSA4 python=3.12
+conda activate GSA4 
+
+
+4. Install :
+
+pip install -r requirements.txt
+pip install Ipython
+pip install supervision==0.21.0
+
+5. cd ...../Grounded-Segment-Anything/GroundingDINO
+
+pip install -q .
+
+6. cd ...../Grounded-Segment-Anything/segment_anything
+
+pip install -q .
+
+Download the "ViT-H SAM model" model from this url , and put it in the main segment_anything folder : https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+
+
+7. Go back to the "Python-Cool-Stuff" folder (the parent folder of Grounded-Segment-Anything) :
+
+8. Run vscode using the command : code
+
+9. Choose "Python-Cool-Stuff" folder . The path in my case is is : "/mnt/c/Python-Cool-Stuff/"
+
+8. Copy the the Python code the main folder Grounded-Segment-Anything and
+start run Step1 to Step 5
+
+
+
+
+
+
+

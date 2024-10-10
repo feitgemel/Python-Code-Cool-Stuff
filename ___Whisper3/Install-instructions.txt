@@ -1,0 +1,79 @@
+Whisper3
+====================================================================================
+
+1. Create conda enviroment :
+
+conda create -n whisper3 python=3.9 
+conda activate whisper3 
+
+
+2. Install Pytorch:
+
+conda install pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0  pytorch-cuda=11.8 -c pytorch -c nvidia
+
+
+3. Install Whisper:
+
+pip install -U openai-whisper
+
+
+4. instal FFmpeg:
+
+conda install -c conda-forge ffmpeg
+
+
+
+
+
+
+1. # Go to the your selected folder . My is : "Python-Cool-Stuff"
+# git clone this repository
+git clone https://github.com/AILab-CVC/VideoCrafter.git
+cd VideoCrafter
+
+
+
+2. Create condat enivroment :
+
+conda create -n VC python=3.8.5
+conda activate VC
+
+
+
+3. install python dependencies :
+==================================
+
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# Install :
+
+pip install decord==0.6.0
+pip install einops==0.3.0
+pip install imageio==2.9.0
+pip install numpy==1.24.2
+pip install omegaconf==2.1.1
+pip install opencv_python
+pip install pandas==2.0.0
+pip install Pillow==9.5.0
+pip install pytorch_lightning==1.8.3
+pip install PyYAML==6.0
+pip install setuptools==65.6.3
+pip install tqdm==4.65.0
+pip install transformers==4.25.1
+pip install moviepy
+pip install av
+pip install xformers
+pip install gradio
+pip install timm
+pip install scikit-learn 
+pip install open_clip_torch==2.22.0
+pip install kornia
+
+
+
+
+
+# Run :
+
+For CT images:
+TotalSegmentator -i ct.nii.gz -o segmentations

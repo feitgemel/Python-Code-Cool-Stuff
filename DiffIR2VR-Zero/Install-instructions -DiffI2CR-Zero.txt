@@ -1,0 +1,114 @@
+https://github.com/jimmycv07/DiffIR2VR-Zero
+===========================================
+
+𝐙𝐞𝐫𝐨-𝐒𝐡𝐨𝐭 𝐕𝐢𝐝𝐞𝐨 𝐑𝐞𝐬𝐭𝐨𝐫𝐚𝐭𝐢𝐨𝐧 𝐰𝐢𝐭𝐡 𝐃𝐢𝐟𝐟𝐮𝐬𝐢𝐨𝐧-𝐛𝐚𝐬𝐞𝐝 𝐈𝐦𝐚𝐠𝐞 𝐑𝐞𝐬𝐭𝐨𝐫𝐚𝐭𝐢𝐨𝐧 𝐌𝐨𝐝𝐞𝐥𝐬!🔥
+
+0. Run PowerShell in Administrator , and then run wsl 
+
+1. Choose your favorite folder for cloning :
+
+git clone https://github.com/jimmycv07/DiffIR2VR-Zero.git
+cd DiffIR2VR-Zero
+
+2. Create conda enviroment :
+
+conda create -n diffir2vr python=3.10
+conda activate diffir2vr
+
+3. Install :
+
+pip install -r requirements.txt
+
+4. Download models weights : 
+
+You will need to download the GMFlow weights manually and put this in a new folder names "weights" based on the the folder structure. 
+
+weights
+└─── gmflow_sintel-0c07dcb3.pth
+└─── v2.pth
+└─── v2-1_512-ema-pruned.ckpt
+
+
+This is the link for the models: https://drive.google.com/file/d/1d5C5cgHIxWGsFR1vYs5XrQbbUiZl9TX2/view?usp=sharing
+
+The rest will be downloaded automatically during inference.
+
+
+
+5. Inference
+============
+
+a. Video Super-Resolution : (Low resolution Video with two kids ) :
+
+cd My-Videos
+mkdir frames 
+
+Extract all the frames 
+ffmpeg -i MOV00099.mpg frames/%04d.png
+
+# go back to the main folder
+cd ..
+
+python -u inference.py \
+--version v2 \
+--task sr \
+--upscale 4 \
+--cfg_scale 4.0 \
+--batch_size 10 \
+--input inputs/BDx4/rhino \
+--output results/SR/rhino  \
+--config configs/inference/my_cldm.yaml \
+--final_size "(480, 854)" \
+--merge_ratio "(0.6, 0)" 
+
+# My video / frames 
+
+python -u inference.py --version v2 --task sr --upscale 4 --cfg_scale 4.0 --batch_size 10 --input My-Videos/frames --output results/My-Videos --config configs/inference/my_cldm.yaml --final_size "(640, 640)" --merge_ratio "(0.6, 0)" 
+
+
+# Merge the images into a video :
+
+
+Only the result :
+
+ffmpeg -framerate 10 -pattern_type glob -i "results/My-Videos/out/*.png" -c:v libx264 -pix_fmt yuv420p results/out.mp4
+
+Compare source and result :
+
+ffmpeg -framerate 10 -pattern_type glob -i "results/My-Videos/lq_out/*.png" -c:v libx264 -pix_fmt yuv420p results/lq_out.mp4
+
+
+===================================================================
+
+
+b. Video Denoising (Clean noise in a video) :
+
+The video should be extracted to frames.
+Extract all the frames :
+ffmpeg -i myVideo.mp4 frames/%04d.png
+
+Copy the frames folder to the DiffIR2VR-Zero folder 
+
+The command : 
+python -u inference.py \
+--version v2 \
+--task dn \
+--upscale 1 \
+--cfg_scale 4.0 \
+--batch_size 10 \
+--input inputs/noise_50/flamingo \
+--output results/Denoise/flamingo  \
+--config configs/inference/my_cldm.yaml \
+--final_size "(480, 854)" \
+--merge_ratio "(0.6, 0)" \
+--better_start 
+
+Example :
+
+python -u inference.py --version v2 --task dn --upscale 1 --cfg_scale 4.0 --batch_size 10 --input 720-576-Frames --output results/720-576  --config configs/inference/my_cldm.yaml --final_size "(576, 720)
+" --merge_ratio "(0.6, 0)" --better_start
+
+The result will be in the "results/720-576" folder .
+
+==================================================================================================================================
+

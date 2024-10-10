@@ -1,0 +1,94 @@
+https://github.com/KwaiVGI/LivePortrait
+======================================
+
+1. Choose your favorite folder for cloning :
+
+git clone https://github.com/KwaiVGI/LivePortrait.git
+cd LivePortrait
+
+2. Create conda enviroment :
+
+conda create -n LivePortrait python=3.9
+conda activate LivePortrait
+
+3. Install 
+
+Find your Cuda version
+nvcc ---version
+
+# for CUDA 11.1
+pip install torch==1.10.1+cu111 torchvision==0.11.2 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+
+# for CUDA 11.8
+pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu118
+
+# for CUDA 12.1 !!!! My version
+-------------------------------
+pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
+# ...
+
+
+pip install -r requirements.txt
+
+
+4. Download the weights :
+==========================
+
+
+pip install -U "huggingface_hub[cli]"
+
+huggingface-cli download KwaiVGI/LivePortrait --local-dir pretrained_weights --exclude "*.git*" "README.md" "docs"
+
+========
+Alternatively, you can download all pretrained weights from Google Drive : https://drive.google.com/drive/folders/1UtKgzKjFAOmZkhNK-OYT0caJ_w2XAnib
+
+Unzip and place them in ./pretrained_weights.
+=========
+
+
+5. Run the interface 🤗:
+
+-> Demo :
+python inference.py -s assets/examples/source/s9.jpg -d assets/examples/driving/d0.mp4
+
+# My example :
+python inference.py -s my-Examples/eran.jpg -d assets/examples/driving/d12.mp4
+
+
+# Animals :
+
+# Run this commands :
+cd src/utils/dependencies/XPose/models/UniPose/ops
+python setup.py build install
+cd ../../../../../../../
+
+
+# A cat :
+
+python inference_animals.py -s assets/examples/source/s39.jpg -d assets/examples/driving/d19.mp4 --driving_multiplier 1.75 --no_flag_stitching
+
+# My dog :
+python inference_animals.py -s my-Examples/Dori.jpg -d assets/examples/driving/d19.mp4 --driving_multiplier 1.75 --no_flag_stitching
+
+# .pkl as Driving video
+python inference_animals.py -s my-Examples/Dori.jpg -d assets/examples/driving/wink.pkl --driving_multiplier 1.75 --no_flag_stitching
+
+
+# Use Cropping :
+
+# example (Mona lisa) with auto cropping to the driving video to 512X512 :
+
+python inference.py -s assets/examples/source/s9.jpg -d assets/examples/driving/d13.mp4 --flag_crop_driving_video
+
+
+
+
+
+
+
+
+
+
+
+
+

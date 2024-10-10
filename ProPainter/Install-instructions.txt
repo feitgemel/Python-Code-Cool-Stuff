@@ -1,0 +1,28 @@
+ProPainter
+================================================
+
+1. Create conda enviroment:
+conda create -n pro python=3.8
+conda activate pro 
+
+2. Install Pytorch :
+conda install pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0  pytorch-cuda=11.8 -c pytorch -c nvidia
+
+3. Go to the your selected folder . My is : "Python-Cool-Stuff"
+
+git clone https://github.com/sczhou/ProPainter.git
+cd ProPainter
+
+4. Install required libraries :
+
+pip install av addict einops future scipy opencv-python matplotlib scikit-image imageio-ffmpeg pyyaml requests timm yapf
+
+
+5. Run the inference . In the first time you should for downloading the model.
+
+# Run inference (object removal)
+python inference_propainter.py --video inputs/object_removal/bmx-trees --mask inputs/object_removal/bmx-trees_mask 
+
+# Another one (Tennis) in better resolution (more time)
+python inference_propainter.py --video inputs/object_removal/tennis --mask inputs/object_removal/tennis_mask --height 1280 --width 720
+
