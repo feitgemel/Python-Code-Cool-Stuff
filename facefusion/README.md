@@ -1,27 +1,26 @@
-# Automatic Image Captioning with Vit-Gpt2
+# FaceFusion Face Swap Is WILD (Full FaceFusion Installation and Tutorial)
 <p align="center">
-  <img width="800" src="Image Captions.png" "image">
+  <img width="800" src="Face Fusion.png" "image">
 </p>
 
 ##
 <br/><br/> 
 
 <font size= "4" >
-In this tutorial, we will use Hugging Face’s pre-trained 'nlpconnect/vit-gpt2-image-captioning' model.
+Face Swapping in Images & Videos Using FaceFusion | Full Setup & Tutorial
 
-You'll learn how to easily generate descriptive captions for any image using Python and PyTorch. We’ll walk you through setting up the Vision Transformer (ViT) for image processing and GPT-2 for text generation.
+In this tutorial, we dive into the world of face swapping, using the powerful FaceFusion library. 
+You'll see hands-on examples of how to swap faces in both images and videos, followed by a step-by-step guide to setting up a fresh environment 
 <br/><br/> 
 What you’ll learn:
 
 * How to install the environment and the required Python libraries
-* How to load and use pre-trained models from Hugging Face
-* Process images with Vision Transformers (ViT)
-* Generate text with GPT-2 in PyTorch
-* Display and merge the images and the captioning result  
+* How to run a face swap on your images 
+* How to run a face swap on your videos 
 
 <br/>
 
-You can find the link for the [tutorial](https://youtu.be/eSmBjyLODZ4) here. 
+You can find the link for the [tutorial](https://youtu.be/oGGDHLZmT34) here. 
 
 You can find more cool Object Detection projects and tutorials in this  [playlist](https://www.youtube.com/playlist?list=PLdkryDe59y4ZW-E59KQYegP5dr1WYnbpn)
 
