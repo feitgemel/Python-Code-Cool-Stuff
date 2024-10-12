@@ -1,6 +1,3 @@
-https://github.com/sujaykhandekar/Automated-objects-removal-inpainter.git
-=========================================================================
-
 
 Automated-objects-removal-inpainter :
 =====================================
@@ -25,8 +22,8 @@ pip install Pillow==9.5.0
 copy the files from this link to the "checkpoints" directory : https://drive.google.com/drive/folders/1qjieeThyse_iwJ0gZoJr-FERkgD5sm4y
 
 
-Predict :
-=========
+Run the Predictions :
+=====================
 
 Remove person :
 python test.py --input My-images --output resultsfinal --remove 15
@@ -34,11 +31,6 @@ python test.py --input My-images --output resultsfinal --remove 15
 Remove : person , dog , bottle
 
 python test.py --input My-images --output resultsfinal --remove 5 12 15 
-
-
-It will take sample images in the ./examples/my_small_data directory and will create and produce result in directory ./checkpoints/resultsfinal. 
-
-You can replace these input /output directories with your desired ones. 
 
 numbers after --remove specifies objects to be removed in the images. 
 ABove command will remove 5bottle and 12 (dog) and 15(people) from the images. 
