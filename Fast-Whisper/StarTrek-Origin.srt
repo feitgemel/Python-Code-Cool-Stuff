@@ -1,0 +1,92 @@
+1
+00:00:00,000 --> 00:00:06,000
+ Captain's log, stardate 1324.1.
+
+2
+00:00:07,000 --> 00:00:11,000
+ On planet M113, we encounter a killer from a lost world.
+
+3
+00:00:12,000 --> 00:00:14,000
+ Red modeling all over his face.
+
+4
+00:00:15,000 --> 00:00:16,000
+ What happened?
+
+5
+00:00:16,000 --> 00:00:17,000
+ What do you suppose happened, Captain?
+
+6
+00:00:17,000 --> 00:00:20,000
+ You beamed down a crewman who doesn't know better than to eat a...
+
+7
+00:00:20,000 --> 00:00:22,000
+ I've just lost a crewman, Mrs. Crater. I want to know what happened.
+
+8
+00:00:22,000 --> 00:00:23,000
+ And what kills a healthy man?
+
+9
+00:00:23,000 --> 00:00:25,000
+ I'll tell you something else.
+
+10
+00:00:25,000 --> 00:00:26,000
+ This man shouldn't be dead.
+
+11
+00:00:26,000 --> 00:00:28,000
+ I can't find anything wrong with him.
+
+12
+00:00:28,000 --> 00:00:31,000
+ According to all the tests, he should get up and just walk away from here.
+
+13
+00:00:31,000 --> 00:00:33,000
+ Can you recognize this thing when you see it?
+
+14
+00:00:36,000 --> 00:00:40,000
+ Professor, I'll forego charges up to this point.
+
+15
+00:00:41,000 --> 00:00:43,000
+ But this creature's aboard my ship.
+
+16
+00:00:43,000 --> 00:00:45,000
+ And I'll have it. Or I'll have your skin. Or both.
+
+17
+00:00:45,000 --> 00:00:46,000
+ Now, where is it?
+
+18
+00:00:46,000 --> 00:00:48,000
+ I'll kill to stay alone.
+
+19
+00:00:49,000 --> 00:00:50,000
+ You hear that, Crack?
+
+20
+00:00:50,000 --> 00:00:53,000
+ Crater knows the creature. If we can take him alive...
+
+21
+00:00:53,000 --> 00:00:55,000
+ We don't want you here!
+
+22
+00:00:55,000 --> 00:00:56,000
+ Let's get him.
+
+23
+00:00:58,000 --> 00:01:01,000
+ To be continued...
+

@@ -1,4 +1,4 @@
-ProPainter
+ProPainter - I did not make a tutorial for that
 ================================================
 
 1. Create conda enviroment:
@@ -18,7 +18,7 @@ cd ProPainter
 pip install av addict einops future scipy opencv-python matplotlib scikit-image imageio-ffmpeg pyyaml requests timm yapf
 
 
-5. Run the inference . In the first time you should for downloading the model.
+5. Run the inference . In the first time you should wait for downloading the model.
 
 # Run inference (object removal)
 python inference_propainter.py --video inputs/object_removal/bmx-trees --mask inputs/object_removal/bmx-trees_mask 
