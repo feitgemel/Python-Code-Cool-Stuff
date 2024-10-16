@@ -3,6 +3,7 @@ Grounded-Segment-Anything
 
 0. Open Powershell as Admin, and run wsl.exe for start Lynux machine
 
+# How to install Linux on Windows with WSL : https://learn.microsoft.com/en-us/windows/wsl/install
 
 1. Setup Cuda variable :
 
@@ -28,11 +29,12 @@ pip install -r requirements.txt
 pip install Ipython
 pip install supervision==0.21.0
 
-5. cd ...../Grounded-Segment-Anything/GroundingDINO
+5. cd Grounded-Segment-Anything/GroundingDINO
 
 pip install -q .
+cd ..
 
-6. cd ...../Grounded-Segment-Anything/segment_anything
+6. cd Grounded-Segment-Anything/segment_anything
 
 pip install -q .
 
@@ -40,6 +42,8 @@ Download the "ViT-H SAM model" model from this url , and put it in the main segm
 
 
 7. Go back to the "Python-Cool-Stuff" folder (the parent folder of Grounded-Segment-Anything) :
+
+7.5 Install Vscode . This is the link : https://code.visualstudio.com/docs/setup/linux
 
 8. Run vscode using the command : code
 

@@ -141,7 +141,7 @@ def detect(image_source, image, text_prompt, model, box_threshold=0.3, text_thre
     return image_source, boxes
 
 
-annotated_frame, detected_boxes = detect(image_source, image, text_prompt="a person", model=groundingdino_model)
+annotated_frame, detected_boxes = detect(image_source, image, text_prompt="a teddy bear", model=groundingdino_model)
 Image.fromarray(annotated_frame)
 
 
