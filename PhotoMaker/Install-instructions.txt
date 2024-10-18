@@ -1,13 +1,11 @@
-PhotoMaker : https://github.com/TencentARC/PhotoMaker
-===========================================
 
 * Install the Visual Studio 2015, 2017, 2019, and 2022 redistributabl :
 https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 4. #Setup :
 
-conda create --name photomaker2 python=3.10
-conda activate photomaker2
+conda create --name photomaker python=3.10
+conda activate photomaker
 
 # Install photomaker
 # Choose your working folder : (mine is Python-cool-stuff) :
@@ -15,7 +13,7 @@ conda activate photomaker2
 git clone https://github.com/bmaltais/PhotoMaker.git
 cd PhotoMaker
 
-nvcc -- version
+nvcc --version
 
 pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 --index-url https://download.pytorch.org/whl/cu118
 
@@ -26,7 +24,7 @@ pip3 install --force einops==0.4.1
 pip install onnxruntime-gpu
 pip install albumentations==1.3.0 
 pip install diffusers==0.29.1 
-
+ 
 #Start a local gradio demo
 python gradio_demo/app.py
 
