@@ -8,10 +8,10 @@ cd LivePortrait
 
 2. Create conda enviroment :
 
-conda create -n LivePortrait python=3.9
+conda create -n LivePortrait python=3.10
 conda activate LivePortrait
 
-3. Install 
+3. Install Pytorch 
 
 Find your Cuda version
 nvcc ---version
@@ -25,8 +25,8 @@ pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https
 # for CUDA 12.1 !!!! My version
 -------------------------------
 pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
-# ...
 
+# Continue installation :
 
 pip install -r requirements.txt
 
