@@ -8,16 +8,17 @@ Real Time face swapper :
 https://mega.nz/folder/m10iELBK#Y0H6BflF9C4k_clYofC7yA
 
 If you are using Nvidida choost the last build version exe file
-Since it's about 2.2 Giga , you should wait about 10 minutes
+Since it's about 2.2 Giga , you should wait about 10 minutes , and about 10 Giga free disk space
 
 
 2. Run the exe file and Choose your favorite folder for extracting the files)
+
 (My folder would be "C:\Python-Cool-Stuff  )
 
 
 3. Go to the folder , and run : DeepFaceLive.bat
 
-4. Settings :
+4. First setting of the App :
 
 a. Turn on the camera from the bottom left corener . You should see an automatic preview of the camera
 
@@ -70,7 +71,7 @@ Copy the files into userdata/dfm_models
 ----------------------------------------------------------------------
 Turn of face swap and turn on face animator
 Choose an image
-It will copy yout face impressions into to the still image
+It will copy your face impressions into to the still image
 
 Open eyes, smile , open the mouth
 -------------------------------------------------------------------
