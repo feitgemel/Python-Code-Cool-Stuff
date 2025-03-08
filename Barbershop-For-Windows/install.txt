@@ -6,14 +6,22 @@
 https://github.com/ZPdesu/Barbershop
 =======================================================
 
+
+# Run it on Power Shell with WSL Ubuntu :
+
 git clone https://github.com/ZPdesu/Barbershop.git
 cd Barbershop
 
-conda create -n Brshop python=3.7
+conda create -n Brshop python=3.7.11
 conda activate Brshop 
 
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
+#conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 
-conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+# install rust : run both commands :
+1. curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+2. export PATH="$HOME/.cargo/bin:$PATH"
+
 
 copy requirements.txt the working folder , and run the next command :
 pip install -r requirements.txt
