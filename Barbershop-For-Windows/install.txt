@@ -51,6 +51,7 @@ And run this command. It will reshape the image and copy it to the input/face fo
 ======================================================================================
 copy Lilach_face.png to the Preprocess folder 
 
+# Important for every new images that copied
 python align_face.py
 
 
