@@ -1,7 +1,7 @@
 https://github.com/sczhou/CodeFormer
 ===========================================
 
-conda create --name Codeformer3 python=3.10
+conda create --name Codeformer3 python=3.11
 conda activate Codeformer3 
 
 
@@ -11,30 +11,31 @@ cd CodeFormer
 
 #################### pip install -r requirements.txt
 
-# install Pytorch since the requirements.txt inatall the cpu and not Gpu
+# install Pytorch since the requirements.txt install the cpu and not Gpu
 # ======================================================================
 
 # -> get cuda version
 nvcc --version
 
-Install Pytorch for for Cuda 11.16 :
-conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+# Cuda 12.4
+conda install pytorch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 pytorch-cuda=12.4 -c pytorch -c nvidia 
 
-pip install addict
-pip install future
-pip install lmdb
-pip install numpy
-pip install opencv-python
-pip install Pillow==9.5.0
-pip install pyyaml
-pip install requests
-pip install scikit-image
-pip install scipy
-pip install tb-nightly
-pip install tqdm
-pip install yapf
-pip install lpips
+pip install addict==2.4.0
+pip install future==1.0.0
+pip install lmdb==1.6.2
+pip install opencv-python==4.11.0.86
+pip install requests==2.32.3
+pip install scikit-image==0.25.2
+pip install tb-nightly==2.20.0a20250602
+pip install tqdm==4.67.1
+pip install yapf==0.43.0
+pip install lpips==0.1.4
 
+
+#pip install numpy==2.2.6
+#pip install Pillow==9.5.0
+# pip install pyyaml
+#pip install scipy==1.15.3
 
 # more commands :
 python basicsr/setup.py develop
@@ -46,18 +47,19 @@ python scripts/download_pretrained_models.py facelib
 python scripts/download_pretrained_models.py dlib 
 python scripts/download_pretrained_models.py CodeFormer
 
-copy the fixed file crop_align_face.py to scripts folder !!!
+---------------------------------------------------------------------------------------------------
+
+# copy the file crop_align_face2.py to scripts folder !!!
 
 ---------------------------------------------------------------------------------------------------
-### copy your images to : "inputs/whole_imgs" !!!!!!!
-
+# copy your images to : "inputs/whole_imgs" !!!!!!!
 
 --------------------------------------------------------------------------
 if you would like to crop(!!!) the faces in images you can use this command :
-python scripts/crop_align_face.py -i [input folder] -o [output folder]
+python scripts/crop_align_face2.py -i [input folder] -o [output folder]
 
 ###### sample command for to generated cropped images
-python scripts/crop_align_face.py -i inputs/whole_imgs -o inputs/cropped_faces
+python scripts/crop_align_face2.py -i inputs/whole_imgs -o inputs/cropped_faces
 
 ----------------------------------------------------------------------------------
 
