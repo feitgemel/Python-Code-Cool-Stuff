@@ -29,9 +29,10 @@ The tutorial is divided into 2 parts:
 
 🧠 Part 2: Running the App: Once your environment is ready, We'll show you how to run the app using your input files : video and any face image.
 
-<br/><br/> 
+<br/>
 
-You can find the link for the [tutorial](https://youtu.be/2wqHbrD2x4o) here. 
+You can find the link for the [tutorial](https://eranfeit.net/face-swap-in-a-video-with-your-own-image-using-roop/) here.  
+You can find the link for the [Video tutorial](https://youtu.be/2wqHbrD2x4o) here. 
 
 You can find more cool Python projects and tutorials in this [playlist]https://www.youtube.com/playlist?list=PLdkryDe59y4bxVvpexwR6PMTHH6_vFXjA)
 
