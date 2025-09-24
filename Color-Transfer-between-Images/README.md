@@ -33,7 +33,8 @@ The tutorial is divided into four parts:
 
 <br/><br/> 
 
-You can find the link for the [tutorial](https://youtu.be/n4_qxl4E_w4) here. 
+You can find the link for the [tutorial](https://eranfeit.net/amazing-color-transfer-between-images/) here.  
+You can find the link for the [Video tutorial](https://youtu.be/n4_qxl4E_w4) here. 
 
 You can find more cool Python projects and tutorials in this [playlist]https://www.youtube.com/playlist?list=PLdkryDe59y4bxVvpexwR6PMTHH6_vFXjA)
 

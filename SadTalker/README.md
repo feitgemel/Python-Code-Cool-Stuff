@@ -30,7 +30,8 @@ The tutorial is divided into 3 parts:
 🚀 Part 3: Running the models on both : video and audio files. 
 <br/><br/> 
 
-You can find the link for the [tutorial](https://youtu.be/dqkM0lxrruQ) here. 
+You can find the link for the [tutorial](https://eranfeit.net/lip-sync-bring-your-image-to-life-using-sadtalker/) here.  
+You can find the link for the [Video tutorial](https://youtu.be/dqkM0lxrruQ) here.
 
 You can find more cool Python projects and tutorials in this [playlist]https://www.youtube.com/playlist?list=PLdkryDe59y4bxVvpexwR6PMTHH6_vFXjA)
 

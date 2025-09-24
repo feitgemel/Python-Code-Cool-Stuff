@@ -31,7 +31,8 @@ The tutorial is divided into five parts:
 🔮 Part 4: Run a demo , and Use Your Own Images and Video
 <br/><br/> 
 
-You can find the link for the [tutorial](https://youtu.be/oXDm6JB9xak) here. 
+You can find the link for the [tutorial](https://eranfeit.net/transform-static-images-into-lifelike-animations/) here.  
+You can find the link for the [Video tutorial](https://youtu.be/oXDm6JB9xak) here. 
 
 You can find more cool Python projects and tutorials in this [playlist]https://www.youtube.com/playlist?list=PLdkryDe59y4bxVvpexwR6PMTHH6_vFXjA)
 

@@ -33,7 +33,8 @@ The tutorial is divided into 2 parts:
 
 <br/>
 
-You can find the link for the [tutorial](https://youtu.be/zrDIY-JqNrU) here. 
+You can find the link for the [tutorial](https://eranfeit.net/watch-a-song-composed-by-artificial-intelligence/) here.  
+You can find the link for the [Video tutorial](https://youtu.be/zrDIY-JqNrU) here. 
 
 You can find more cool Python projects and tutorials in this [playlist]https://www.youtube.com/playlist?list=PLdkryDe59y4bxVvpexwR6PMTHH6_vFXjA)
 

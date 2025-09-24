@@ -35,7 +35,8 @@ The tutorial is divided into four parts:
 
 <br/><br/> 
 
-You can find the link for the [tutorial](https://youtu.be/sjhZjsvfN_o) here. 
+You can find the link for the [tutorial](https://eranfeit.net/upscale-your-images-and-videos-using-super-resolution/) here.  
+You can find the link for the [Video tutorial](https://youtu.be/sjhZjsvfN_o) here. 
 
 You can find more cool Python projects and tutorials in this [playlist]https://www.youtube.com/playlist?list=PLdkryDe59y4bxVvpexwR6PMTHH6_vFXjA)
 
