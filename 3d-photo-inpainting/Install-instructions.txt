@@ -27,8 +27,8 @@ pip install transforms3d==0.3.1
 pip install networkx==2.3
 
 pip install Cython==3.0a5
-pip install git+https://github.com/pattern-inc/cynetworkx.git
-
+#pip install git+https://github.com/pattern-inc/cynetworkx.git
+pip install git+https://github.com/lijx10/cynetworkx
 pip install scikit-image
 pip install pyYaml
 
