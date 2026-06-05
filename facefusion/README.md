@@ -22,6 +22,8 @@ What you’ll learn:
 
 You can find the link for the [tutorial](https://youtu.be/oGGDHLZmT34) here. 
 
+You can find more detailed info in my the blog [post](https://eranfeit.net/facefusion-face-swap-is-wild-full-facefusion-installation-and-tutorial/) here.
+
 You can find more cool Object Detection projects and tutorials in this  [playlist](https://www.youtube.com/playlist?list=PLdkryDe59y4ZW-E59KQYegP5dr1WYnbpn)
 
 You can find more computer vision tutorials in my blog page : https://eranfeit.net/blog/
